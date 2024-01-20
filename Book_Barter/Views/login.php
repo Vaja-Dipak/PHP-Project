@@ -26,7 +26,7 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Log In</h4>
-                                            <form action="" method="post">
+                                            <form action="" method="post" onsubmit="login()">
                                                 <div class="form-group">
                                                     <input type="email" name="logemail" class="form-style"
                                                         placeholder="Your Email" id="logemail" required>
@@ -37,7 +37,7 @@
                                                         placeholder="Your Password" id="logpass" required>
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
-                                                <input type="submit" class="btn font-weight-bold mt-4" name="login"
+                                                <input type="submit" class="btn font-weight-bold mt-4" name="log"
                                                     value="Log In">
                                                 <p class="mb-0 mt-4 text-center"><a href="forgotpass"
                                                         class="link">Forgot your password?</a></p>
@@ -49,24 +49,24 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-3 pb-3">Sign Up</h4>
-                                            <form action="" method="post" onsubmit="savedt()">
+                                            <form action="" method="post" onsubmit="registration()">
                                                 <div class="form-group">
-                                                    <input type="text" name="regname" class="form-style"
+                                                    <input type="text" name="u_name" class="form-style"
                                                         placeholder="Enter Full Name" id="regname">
                                                     <i class="input-icon uil uil-user"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="email" name="regemail" class="form-style"
+                                                    <input type="email" name="u_email" class="form-style"
                                                         placeholder="Enter Email" id="regemail">
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="tel" name="regmobile" class="form-style"
+                                                    <input type="tel" name="u_mobile" class="form-style"
                                                         placeholder="Enter Mobile" id="regmobile">
                                                     <i class="input-icon uil uil-phone"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="password" name="regpass" class="form-style"
+                                                    <input type="password" name="u_password" class="form-style"
                                                         placeholder="Enter Password" id="regpass">
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
@@ -86,7 +86,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
-        function savedt() {
+        function registration() {
             event.preventDefault()
 
             var result = {}
@@ -94,15 +94,36 @@
                 result[this.name] = this.value;
             })
             // console.log(result);
-            fetch('<?php echo $this->assets_url;?>/registration',{
+            fetch('<?php echo $this->assets_url; ?>/registration', {
                 headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    method: "POST",
-                    body: JSON.stringify(result)
-            }).then((res)=>res.json()).then((result)=>{
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify(result)
+            }).then((res) => res.json()).then((result) => {
                 console.log(result);
+                alert(result);
+            })
+        }
+
+        function login() {
+            event.preventDefault()
+
+            var result={}
+            $each($('form').serializeArray(), function(){
+                result[this.name]=this.value;
+            })
+            fetch('<?php echo $this->assets_url; ?>/login', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify(result)
+            }).then((res) => res.json()).then((result) => {
+                console.log(result);
+                // alert(result);
             })
         }
     </script>
