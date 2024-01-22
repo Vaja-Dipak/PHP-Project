@@ -1,10 +1,13 @@
 <?php
+session_start();
 require_once("Model/model.php");
 class controller extends Model
 {
     public $assets_url = "http://localhost/Book_Barter";
     public function __construct()
     {
+        parent::__construct();
+
         if (isset($_SERVER['PATH_INFO'])) {
             switch ($_SERVER['PATH_INFO']) {
                 case '/':
@@ -44,28 +47,6 @@ class controller extends Model
                     break;
                 case '/login_regi':
                     include_once("Views/login.php");
-
-                    if (isset($_POST["regi"])) {
-                        // echo "<pre>";
-                        // print_r($_REQUEST);
-                        // echo "</pre>";
-
-                        $data = array(
-                            "u_name" => $_POST['u_name'],
-                            "u_email" => $_POST['u_email'],
-                            "u_mobile" => $_POST['u_mobile'],
-                            "u_password" => $_POST['u_password']
-                        );
-
-                        $res = $this->insert("userdata", $data);
-                        print_r($res);
-                    }
-
-
-                    if (isset($_POST["log"])) {
-                        $data=$this->select("userdata");
-                    }
-
                     break;
                 case '/forgotpass':
                     include_once("Views/forgotpassword.php");
@@ -75,17 +56,17 @@ class controller extends Model
 
                 case '/registration':
                     $formdata = json_decode(file_get_contents('php://input'), true);
-                    $data = array_slice($formdata, 2);
-                    $response = $this->insert("userdata", $data);
+                    $response = $this->insert("userdata", $formdata);
                     echo json_encode($response);
-
                     break;
-                case '/login':
-                    // $formdata = json_decode(file_get_contents('php://input'), true);
-                    // $data = array_slice($formdata, 2);
-                    // $response = $this->insert("userdata", $data);
-                    // echo json_encode($formdata);
 
+                case '/login':
+                    $formdata = json_decode(file_get_contents('php://input'), true);
+                    $response = $this->login($formdata);
+                    if ($response['code'] == 1) {
+                        $_SESSION['userdata'] = $response['data'];
+                    }
+                    echo json_encode($response);
                     break;
 
                 // API END

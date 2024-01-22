@@ -33,10 +33,31 @@ class Model
         return $Res;
     }
 
+    function login($where)
+    {
+        $sql = "SELECT * FROM userdata WHERE u_email= '".$where['u_email']."' AND u_password= '".$where['u_password']."'";
+        $sqlexe = $this->db->query($sql);
+        
+        if ($sqlexe->num_rows > 0) {
+            $data = $sqlexe->fetch_object();
+
+            $Res['code'] = 1;
+            $Res['msg'] = "success";
+            $Res['data'] = $data;
+        } else {
+            $Res['code'] = 0;
+            $Res['msg'] = "try again";
+            $Res['data'] = 0;
+        }
+        return $Res;
+    }
+
     function select($tbl)
     {
         $sql = "SELECT * FROM $tbl";
-        $sqlexe = $this->quer($sql);
+        echo $sql;
+        $sqlexe = $this->db->query($sql);
+        
         if ($sqlexe > 0) {
             while ($data = $sqlexe->fetch_object()) {
                 $fetchdata[] = $data;

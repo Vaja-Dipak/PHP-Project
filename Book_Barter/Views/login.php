@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Login/Signup Pure CSS</title>
+    <title>Signin/Signup</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
     <link rel="stylesheet" href="<?php echo $this->assets_url; ?>/Assets/css/authform.css">
@@ -26,14 +26,14 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Log In</h4>
-                                            <form action="" method="post" onsubmit="login()">
+                                            <form action="" id="loginform" method="post" onsubmit="login()">
                                                 <div class="form-group">
-                                                    <input type="email" name="logemail" class="form-style"
+                                                    <input type="email" name="u_email" class="form-style"
                                                         placeholder="Your Email" id="logemail" required>
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="password" name="logpass" class="form-style"
+                                                    <input type="password" name="u_password" class="form-style"
                                                         placeholder="Your Password" id="logpass" required>
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
@@ -49,25 +49,25 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-3 pb-3">Sign Up</h4>
-                                            <form action="" method="post" onsubmit="registration()">
+                                            <form action="" id="registrationform" method="post" onsubmit="registration()">
                                                 <div class="form-group">
                                                     <input type="text" name="u_name" class="form-style"
-                                                        placeholder="Enter Full Name" id="regname">
+                                                        placeholder="Enter Full Name" id="regname" required>
                                                     <i class="input-icon uil uil-user"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
                                                     <input type="email" name="u_email" class="form-style"
-                                                        placeholder="Enter Email" id="regemail">
+                                                        placeholder="Enter Email" id="regemail" required>
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
                                                     <input type="tel" name="u_mobile" class="form-style"
-                                                        placeholder="Enter Mobile" id="regmobile">
+                                                        placeholder="Enter Mobile" id="regmobile" required>
                                                     <i class="input-icon uil uil-phone"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
                                                     <input type="password" name="u_password" class="form-style"
-                                                        placeholder="Enter Password" id="regpass">
+                                                        placeholder="Enter Password" id="regpass" required>
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <input type="submit" class="btn font-weight-bold mt-4" name="regi"
@@ -90,7 +90,7 @@
             event.preventDefault()
 
             var result = {}
-            $.each($('form').serializeArray(), function () {
+            $.each($(document.getElementById('registrationform')).serializeArray(), function () {
                 result[this.name] = this.value;
             })
             // console.log(result);
@@ -102,8 +102,13 @@
                 method: "POST",
                 body: JSON.stringify(result)
             }).then((res) => res.json()).then((result) => {
-                console.log(result);
-                alert(result);
+                // console.log(result.code);
+                if (result.code==1) {
+                    alert("Registration Completed");
+                    document.getElementById('reg-log').checked=false;
+                } else {
+                    alert("Please try again later");
+                }
             })
         }
 
@@ -111,7 +116,7 @@
             event.preventDefault()
 
             var result={}
-            $each($('form').serializeArray(), function(){
+            $.each($(document.getElementById('loginform')).serializeArray(), function(){
                 result[this.name]=this.value;
             })
             fetch('<?php echo $this->assets_url; ?>/login', {
@@ -122,8 +127,11 @@
                 method: "POST",
                 body: JSON.stringify(result)
             }).then((res) => res.json()).then((result) => {
-                console.log(result);
-                // alert(result);
+                if (result.code==1) {
+                    window.location.href = "home";
+                } else {
+                    alert("Please Enter valid Email and Password");
+                }
             })
         }
     </script>
