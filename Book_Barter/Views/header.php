@@ -23,8 +23,8 @@
     <!-- common-css -->
     <link href="<?php echo $this->assets_url; ?>/Assets/css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- gallery desoslide -->
-    <link rel="stylesheet" href="<?php echo $this->assets_url; ?>/Assets/css/animate.min.css">
-    <link rel="stylesheet" href="<?php echo $this->assets_url; ?>/Assets/css/jquery.desoslide.css">
+    <link href="<?php echo $this->assets_url; ?>/Assets/css/animate.min.css" rel="stylesheet">
+    <link href="<?php echo $this->assets_url; ?>/Assets/css/jquery.desoslide.css" rel="stylesheet">
     <!-- font-awesome icons -->
     <link href="<?php echo $this->assets_url; ?>/Assets/css/font-awesome.css" rel="stylesheet">
     <!-- footer stylesheet -->
@@ -61,7 +61,7 @@
 
                     <div class="navbar-header page-scroll">
                         <h1>
-                            <a class="navbar-brand" href="home">Chronicle</a>
+                            <a class="navbar-brand" href="home">book barter</a>
                         </h1>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->

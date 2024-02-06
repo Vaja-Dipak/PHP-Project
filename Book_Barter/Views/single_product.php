@@ -116,14 +116,6 @@
 
 					</div>
 					<div class="clearfix"></div>
-					<div class="description">
-						<h5>Check delivery, payment options and charges at your location</h5>
-						<form action="#" method="post">
-							<input type="text" value="Enter pincode" onfocus="this.value = '';"
-								onblur="if (this.value == '') {this.value = 'Enter pincode';}" required="">
-							<input type="submit" value="Check">
-						</form>
-					</div>
 					<div class="occasion-cart">
 						<div class="chr single-item single_page_b">
 							<form action="#" method="post">

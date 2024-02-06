@@ -49,7 +49,8 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-3 pb-3">Sign Up</h4>
-                                            <form action="" id="registrationform" method="post" onsubmit="registration()">
+                                            <form action="" id="registrationform" method="post"
+                                                onsubmit="registration()">
                                                 <div class="form-group">
                                                     <input type="text" name="u_name" class="form-style"
                                                         placeholder="Enter Full Name" id="regname" required>
@@ -103,9 +104,9 @@
                 body: JSON.stringify(result)
             }).then((res) => res.json()).then((result) => {
                 // console.log(result.code);
-                if (result.code==1) {
+                if (result.code == 1) {
                     alert("Registration Completed");
-                    document.getElementById('reg-log').checked=false;
+                    document.getElementById('reg-log').checked = false;
                 } else {
                     alert("Please try again later");
                 }
@@ -115,9 +116,9 @@
         function login() {
             event.preventDefault()
 
-            var result={}
-            $.each($(document.getElementById('loginform')).serializeArray(), function(){
-                result[this.name]=this.value;
+            var result = {}
+            $.each($(document.getElementById('loginform')).serializeArray(), function () {
+                result[this.name] = this.value;
             })
             fetch('<?php echo $this->assets_url; ?>/login', {
                 headers: {
@@ -127,8 +128,12 @@
                 method: "POST",
                 body: JSON.stringify(result)
             }).then((res) => res.json()).then((result) => {
-                if (result.code==1) {
-                    window.location.href = "home";
+                if (result.code == 1) {
+                    if (result.data.role_id == 1) {
+                        window.location.href = "dashboard";
+                    } else {
+                        window.location.href = "home";
+                    }
                 } else {
                     alert("Please Enter valid Email and Password");
                 }

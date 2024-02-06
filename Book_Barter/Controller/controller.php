@@ -52,6 +52,39 @@ class controller extends Model
                     include_once("Views/forgotpassword.php");
                     break;
 
+                // ADMIN PANEL START
+
+                case '/dashboard':
+                    include_once("Views/Admin/header.php");
+                    include_once("Views/Admin/dashboard.php");
+                    include_once("Views/Admin/footer.php");
+                    break;
+                case '/form':
+                    include_once("Views/Admin/header.php");
+                    include_once("Views/Admin/form.php");
+                    include_once("Views/Admin/footer.php");
+                    break;
+                case '/add-product':
+                    include_once("Views/Admin/header.php");
+                    include_once("Views/Admin/add-product.php");
+                    include_once("Views/Admin/footer.php");
+                    if (isset($_REQUEST['addprod'])) {
+                        $data=array("title"=>$_REQUEST['title'],
+                        "author"=>$_REQUEST['author'],
+                        "rating"=>$_REQUEST['rating'],
+                        "description"=>$_REQUEST['description'],
+                        "price"=>$_REQUEST['price'],
+                        "productimage"=>$_REQUEST['productimage'],);
+
+                        print_r($data);
+                    }
+                    break;
+                case '/inputs':
+                    include_once("Views/Admin/forms-inputs.php");
+                    break;
+
+                // ADMIN PANEL END
+
                 // API START
 
                 case '/registration':
@@ -70,6 +103,16 @@ class controller extends Model
                     break;
 
                 // API END
+
+                // 404 page not found error 
+                default:
+                include_once("Views/Admin/error-page.php");
+                break;
+
+                // Under Maintenance page 
+                case '/under-maintenance':
+                    include_once("Views/Admin/under-maintenance.php");
+                    break;
             }
         } else {
             header("location:home");
