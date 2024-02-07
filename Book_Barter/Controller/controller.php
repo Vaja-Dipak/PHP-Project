@@ -59,24 +59,32 @@ class controller extends Model
                     include_once("Views/Admin/dashboard.php");
                     include_once("Views/Admin/footer.php");
                     break;
-                case '/form':
-                    include_once("Views/Admin/header.php");
-                    include_once("Views/Admin/form.php");
-                    include_once("Views/Admin/footer.php");
-                    break;
                 case '/add-product':
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/add-product.php");
                     include_once("Views/Admin/footer.php");
                     if (isset($_REQUEST['addprod'])) {
-                        $data=array("title"=>$_REQUEST['title'],
-                        "author"=>$_REQUEST['author'],
-                        "rating"=>$_REQUEST['rating'],
-                        "description"=>$_REQUEST['description'],
-                        "price"=>$_REQUEST['price'],
-                        "productimage"=>$_REQUEST['productimage'],);
 
-                        print_r($data);
+                        $file_extension = pathinfo($_FILES["productimage"]["name"], PATHINFO_EXTENSION);
+                        $imagename = $_REQUEST['title'] . "_" . $_REQUEST['title'] . "." . $file_extension;
+                        // Product Image Upload with Name as (ProductName_Author)
+
+                        $specification = $_REQUEST['language'] . ", " . $_REQUEST['format'] . ", " . $_REQUEST['publisher'] . ", " . $_REQUEST['edition'] . ", " . $_REQUEST['pages'];
+
+                        $data = array(
+                            "title" => $_REQUEST['title'],
+                            "author" => $_REQUEST['author'],
+                            "rating" => $_REQUEST['rating'],
+                            "description" => $_REQUEST['description'],
+                            "specification" => $specification,
+                            "price" => $_REQUEST['price'],
+                            "images" => $imagename
+                        );
+
+                        $addprod = $this->insert("product", $data);
+
+                        // $target = "assets/uploads/Products/" . $imagename;
+                        // move_uploaded_file($_FILES["productimage"]["tmp_name"], $target);
                     }
                     break;
                 case '/inputs':
@@ -106,17 +114,30 @@ class controller extends Model
 
                 // 404 page not found error 
                 default:
-                include_once("Views/Admin/error-page.php");
-                break;
+                    include_once("Views/Admin/error-page.php");
+                    break;
 
                 // Under Maintenance page 
                 case '/under-maintenance':
                     include_once("Views/Admin/under-maintenance.php");
                     break;
+                case '/pages-account-settings-account':
+                    include_once("Views/Admin/pages-account-settings-account.php");
+                    break;
+                case '/tables-basic':
+                    include_once("Views/Admin/tables-basic.php");
+                    break;
+                case '/modals':
+                    include_once("Views/Admin/ui-modals.php");
+                    break;
+                case '/toasts':
+                    include_once("Views/Admin/ui-toasts.php");
+                    break;
             }
-        } else {
-            header("location:home");
         }
+        // else {
+        //     header("location:home");
+        // }
     }
 
 }

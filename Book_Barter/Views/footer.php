@@ -146,6 +146,7 @@
     integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- //js -->
+
 <!--search jQuery-->
 <script src="<?php echo $this->assets_url; ?>/Assets/js/main.js"></script>
 <!--search jQuery-->
@@ -153,24 +154,6 @@
 <script src="<?php echo $this->assets_url; ?>/Assets/js/jquery.desoslide.min.js"></script>
 <script src="<?php echo $this->assets_url; ?>/Assets/js/demo.js"></script>
 
-
-<!-- cart-js -->
-
-<script src="<?php echo $this->assets_url; ?>/Assets/js/minicart.js"></script>
-<script>
-    chr.render();
-
-    chr.cart.on('new_checkout', function (evt) {
-        var items, len, i;
-
-        if (this.subtotal() > 0) {
-            items = this.items();
-
-            for (i = 0, len = items.length; i < len; i++) { }
-        }
-    });
-</script>
-<!-- //cart-js -->
 <!-- dropdown nav -->
 <script>
     $(document).ready(function () {

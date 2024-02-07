@@ -1,1151 +1,888 @@
-		<!-- banner -->
-		<div class="banner-bg-inner"></div>
-		<!-- //banner -->
-		<!-- breadcrumbs -->
-		<div class="crumbs text-center">
-			<div class="container">
-				<div class="row">
-					<ul class="btn-group btn-breadcrumb bc-list">
-						<li class="btn btn1">
-							<a href="home">
-								<i class="glyphicon glyphicon-home"></i>
-							</a>
+<!-- banner -->
+<div class="banner-bg-inner"></div>
+<!-- //banner -->
+<!-- breadcrumbs -->
+<div class="crumbs text-center">
+	<div class="container">
+		<div class="row">
+			<ul class="btn-group btn-breadcrumb bc-list">
+				<li class="btn btn1">
+					<a href="home">
+						<i class="glyphicon glyphicon-home"></i>
+					</a>
+				</li>
+				<li class="btn btn2">
+					<a href="product">product catalogue</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!--//breadcrumbs ends here-->
+<!-- Shop -->
+<div class="innerf-pages section">
+	<div class="container-cart">
+		<!-- product left -->
+		<div class="side-bar col-md-3">
+			<h3>Filter by</h3>
+			<form action="" method="post" name="filterby" id="filterby">
+				<!--preference -->
+				<div class="left-side">
+					<h3 class="shopf-sear-headits-sear-head">
+						Categories</h3>
+					<ul>
+						<li>
+							<input type="checkbox" checked name="category[]" value="Biographies" id="Biographies" class="checked">
+							<span class="span">Biographies</span>
 						</li>
-						<li class="btn btn2">
-							<a href="product">product catalogue</a>
+						<li>
+							<input type="checkbox" checked name="category[]" value="Technologies" id="Technologies" class="checked">
+							<span class="span">Technologies</span>
+						</li>
+						<li>
+							<input type="checkbox" checked name="category[]" value="History" id="History" class="checked">
+							<span class="span">History</span>
+						</li>
+						<li>
+							<input type="checkbox" checked name="category[]" value="Business" id="Business" class="checked">
+							<span class="span">Business</span>
 						</li>
 					</ul>
 				</div>
-			</div>
-		</div>
-		<!--//breadcrumbs ends here-->
-		<!-- Shop -->
-		<div class="innerf-pages section">
-			<div class="container-cart">
-				<!-- product left -->
-				<div class="side-bar col-md-3">
-					<!--preference -->
-					<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">
-							Categories</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Biographies</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Fiction</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Management</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Business</span>
-							</li>
-
-						</ul>
-					</div>
-					<!-- // preference -->
-					<div class="search-hotel">
-						<h3 class="shopf-sear-headits-sear-head">
-							<span>author</span> in focus</h3>
-						<form action="#" method="post">
-							<input type="search" placeholder="search here" name="search" required="">
-							<input type="submit" value="Search">
-						</form>
-					</div>
-					<!-- price range -->
-					<div class="range">
-						<h3 class="shopf-sear-headits-sear-head">
-							<span>Price</span> range</h3>
-						<ul class="dropdown-menu6">
-							<li>
-
-								<div id="slider-range"></div>
-								<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-							</li>
-						</ul>
-					</div>
-					<!-- //price range -->
-					<!--preference -->
-					<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">
-							<span>latest</span> arrivals</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">last 30 days</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">last 90 days</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">last 150 days</span>
-							</li>
-
-						</ul>
-					</div>
-					<!-- // preference -->
-					<!-- discounts -->
-					<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">Language</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">English</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Spanish</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Japanese</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">German</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Korean</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Chinese</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">French</span>
-							</li>
-						</ul>
-					</div>
-					<!-- //discounts -->
-					<!-- Binding -->
-					<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">Format</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Hardcover</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Board Book</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Bundle</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Paperback</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">Audio Book</span>
-							</li>
-						</ul>
-					</div>
-					<!-- //Binding -->
-					<!-- discounts -->
-					<div class="left-side">
-						<h3 class="shopf-sear-headits-sear-head">Discount</h3>
-						<ul>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">5% - 20%</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">20% - 40%</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">40% - 60%</span>
-							</li>
-							<li>
-								<input type="checkbox" class="checked">
-								<span class="span">60% or more</span>
-							</li>
-						</ul>
-					</div>
-					<!-- //discounts -->
-					<!-- reviews -->
-					<div class="customer-rev left-side">
-						<h3 class="shopf-sear-headits-sear-head">Customer Review</h3>
-						<ul>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<span>5.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-regular fa-star" aria-hidden="true"></i>
-									<span>4.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star-half-stroke" aria-hidden="true"></i>
-									<i class="fa fa-regular fa-star" aria-hidden="true"></i>
-									<span>3.5</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-regular fa-star" aria-hidden="true"></i>
-									<i class="fa fa-regular fa-star" aria-hidden="true"></i>
-									<span>3.0</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<i class="fa fa-star-half-stroke" aria-hidden="true"></i>
-									<i class="fa fa-regular fa-star" aria-hidden="true"></i>
-									<i class="fa fa-regular fa-star" aria-hidden="true"></i>
-									<span>2.5</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<!-- //reviews -->
-
-
+				<!-- price range -->
+				<div class="range">
+					<h3 class="shopf-sear-headits-sear-head">
+						<span>Price</span> range
+					</h3>
+					<ul class="dropdown-menu6">
+						<li>
+							<div id="slider-range"></div>
+							<input type="text" name="amount" id="amount"
+								style="border: 0; color: #ffffff; font-weight: normal;" />
+						</li>
+					</ul>
 				</div>
-				<!-- //product left -->
-				<!-- product right -->
-				<div class="left-ads-display col-md-9">
-					<div class="wrapper_top_shop">
-						<!-- product-sec1 -->
-						<div class="product-sec1">
-							<!-- row1-->
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib8.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>be creative</h4>
-										<p>Clayton Barton</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 100.00</li>
-												<li>
-													$200.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book1">
-											<input type="hidden" name="amount" value="100.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
+				<!-- //price range -->
+				<!-- language -->
+				<div class="left-side">
+					<h3 class="shopf-sear-headits-sear-head">Language</h3>
+					<ul>
+						<li>
+							<input type="checkbox" checked name="language[]" value="English" id="English" class="checked">
+							<span class="span">English</span>
+						</li>
+						<li>
+							<input type="checkbox" checked name="language[]" value="Hindi" id="Hindi" class="checked">
+							<span class="span">Hindi</span>
+						</li>
+						<li>
+							<input type="checkbox" checked name="language[]" value="Gujarati" id="Gujarati" class="checked">
+							<span class="span">Gujarati</span>
+						</li>
+					</ul>
+				</div>
+				<!-- //language -->
+				<!-- Binding -->
+				<div class="left-side">
+					<h3 class="shopf-sear-headits-sear-head">Format</h3>
+					<ul>
+						<li>
+							<input type="checkbox" checked name="format[]" value="Hardcover" id="Hardcover" class="checked">
+							<span class="span">Hardcover</span>
+						</li>
+						<li>
+							<input type="checkbox" checked name="format[]" value="PDFFormat" id="PDFFormat" class="checked">
+							<span class="span">PDF Format</span>
+						</li>
+						<li>
+							<input type="checkbox" checked name="format[]" value="AudioBook" id="AudioBook" class="checked">
+							<span class="span">Audio Book</span>
+						</li>
+					</ul>
+				</div>
+				<!-- //Binding -->
+				<!-- discounts -->
+				<div class="left-side">
+					<h3 class="shopf-sear-headits-sear-head">Discount</h3>
+					<ul>
+						<li>
+							<input type="checkbox" checked name="discount[]" value="30" id="30" class="checked">
+							<span class="span">5% - 30%</span>
+						</li>
+						<li>
+							<input type="checkbox" checked name="discount[]" value="60" id="60" class="checked">
+							<span class="span">30% - 60%</span>
+						</li>
+						<li>
+							<input type="checkbox" checked name="discount[]" value="60m" id="60m" class="checked">
+							<span class="span">60% or more</span>
+						</li>
+					</ul>
+				</div>
+				<!-- //discounts -->
+				<!-- reviews -->
+				<div class="customer-rev left-side">
+					<h3 class="shopf-sear-headits-sear-head">Customer Review</h3>
+					<ul>
+						<li>
+							<div>
+								<input type="checkbox" checked name="rating[]" value="5" id="5" class="checked">&nbsp;
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<span>5.0</span>
 							</div>
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib7.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>marketing</h4>
-										<p>Niel Fontine</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 200.00</li>
-												<li>
-													$250.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book2">
-											<input type="hidden" name="amount" value="200.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
+						</li>
+						<li>
+							<div>
+								<input type="checkbox" checked name="rating[]" value="4" id="4" class="checked">&nbsp;
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-regular fa-star" aria-hidden="true"></i>
+								<span>4.0</span>
 							</div>
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib3.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>work from home</h4>
-										<p>Jose portilla</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 80.00</li>
-												<li>
-													$100.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book3">
-											<input type="hidden" name="amount" value="80.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
+						</li>
+						<li>
+							<div>
+								<input type="checkbox" checked name="rating[]" value="3" id="3" class="checked">&nbsp;
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-regular fa-star" aria-hidden="true"></i>
+								<i class="fa fa-regular fa-star" aria-hidden="true"></i>
+								<span>3.0</span>
 							</div>
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib6.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>online business</h4>
-										<p>Clayton Barton</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 120.00</li>
-												<li>
-													$130.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book4">
-											<input type="hidden" name="amount" value="120.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
+						</li>
+						<li>
+							<div>
+								<input type="checkbox" checked name="rating[]" value="2" id="2" class="checked">&nbsp;
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-star" aria-hidden="true"></i>
+								<i class="fa fa-regular fa-star" aria-hidden="true"></i>
+								<i class="fa fa-regular fa-star" aria-hidden="true"></i>
+								<i class="fa fa-regular fa-star" aria-hidden="true"></i>
+								<span>2.0</span>
 							</div>
-							<!-- //row1 -->
-							<!-- row2 -->
-							<div class="col-md-3 product-men women_two">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib6.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>e-commerce</h4>
-										<p>Chris Haroun</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 125.00</li>
-												<li>
-													$165.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book5">
-											<input type="hidden" name="amount" value="125.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
+						</li>
+					</ul>
+				</div>
+				<!-- //reviews -->
+				<div>
+					<input type="submit" value="Filter" name="filtering" id="filtering" class="filtering">
+				</div>
+			</form>
+		</div>
+		<!-- //product left -->
+		<!-- product right -->
+		<div class="left-ads-display col-md-9">
+			<div class="wrapper_top_shop">
+				<!-- product-sec1 -->
+				<div class="product-sec1">
+					<!-- row1-->
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib8.jpg" alt="">
+								</a>
 							</div>
-							<div class="col-md-3 product-men women_two">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib2.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>kids</h4>
-										<p>Alex Even</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 70.00</li>
-												<li>
-													$100.00
-												</li>
-											</ul>
+							<div class="caption">
+								<h4>be creative</h4>
+								<p>Clayton Barton</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 100.00</li>
+										<li>
+											$200.00
+										</li>
+									</ul>
 
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book6">
-											<input type="hidden" name="amount" value="70.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
+									<div class="clearfix"> </div>
 								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
 							</div>
-							<div class="col-md-3 product-men women_two">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib5.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>media</h4>
-										<p>Alex Even</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 220.00</li>
-												<li>
-													$300.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book7">
-											<input type="hidden" name="amount" value="220.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men women_two">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib4.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>membership</h4>
-										<p>Hadilen de</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 210.00</li>
-												<li>
-													$300.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book8">
-											<input type="hidden" name="amount" value="210.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
-							</div>
-							<!-- //row2 -->
-							<!-- row3 -->
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib7.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>marketing</h4>
-										<p>Scott Harris</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 180.00</li>
-												<li>
-													$220.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book9">
-											<input type="hidden" name="amount" value="180.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib1.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>online business</h4>
-										<p>Scott Harris</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 330.00</li>
-												<li>
-													$560.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book10">
-											<input type="hidden" name="amount" value="330.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib2.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>kids</h4>
-										<p>Cordebard</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 280.00</li>
-												<li>
-													$500.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book11">
-											<input type="hidden" name="amount" value="280.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="product-chr-info chr">
-									<div class="thumbnail">
-										<a href="single_product">
-											<img src="<?php echo $this->assets_url; ?>/Assets/images/lib3.jpg" alt="">
-										</a>
-									</div>
-									<div class="caption">
-										<h4>work from home</h4>
-										<p>Cordebard</p>
-										<div class="matrlf-mid">
-											<ul class="rating">
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star yellow-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="fa fa-star gray-star" aria-hidden="true"></span>
-													</a>
-												</li>
-											</ul>
-											<ul class="price-list">
-												<li>$ 140.00</li>
-												<li>
-													$200.00
-												</li>
-											</ul>
-
-											<div class="clearfix"> </div>
-										</div>
-										<a href="#">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-										</a>
-										<!-- <form action="#" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="chr_item" value="Book12">
-											<input type="hidden" name="amount" value="140.00">
-											<button type="submit" class="chr-cart pchr-cart">Add to cart
-												<i class="fa fa-cart-plus" aria-hidden="true"></i>
-											</button>
-											<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-										</form> -->
-									</div>
-								</div>
-							</div>
-							<!-- //row3 -->
-							<div class="clearfix"></div>
-
 						</div>
-
-						<!-- //product-sec1 -->
-						<div class="clearfix"></div>
 					</div>
-				</div>
-				<div class="clearfix"></div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib7.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>marketing</h4>
+								<p>Niel Fontine</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 200.00</li>
+										<li>
+											$250.00
+										</li>
+									</ul>
 
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib3.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>work from home</h4>
+								<p>Jose portilla</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 80.00</li>
+										<li>
+											$100.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib6.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>online business</h4>
+								<p>Clayton Barton</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 120.00</li>
+										<li>
+											$130.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- //row1 -->
+					<!-- row2 -->
+					<div class="col-md-3 product-men women_two">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib6.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>e-commerce</h4>
+								<p>Chris Haroun</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 125.00</li>
+										<li>
+											$165.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men women_two">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib2.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>kids</h4>
+								<p>Alex Even</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 70.00</li>
+										<li>
+											$100.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men women_two">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib5.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>media</h4>
+								<p>Alex Even</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 220.00</li>
+										<li>
+											$300.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men women_two">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib4.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>membership</h4>
+								<p>Hadilen de</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 210.00</li>
+										<li>
+											$300.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- //row2 -->
+					<!-- row3 -->
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib7.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>marketing</h4>
+								<p>Scott Harris</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 180.00</li>
+										<li>
+											$220.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib1.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>online business</h4>
+								<p>Scott Harris</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 330.00</li>
+										<li>
+											$560.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib2.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>kids</h4>
+								<p>Cordebard</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 280.00</li>
+										<li>
+											$500.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product">
+									<img src="<?php echo $this->assets_url; ?>/Assets/images/lib3.jpg" alt="">
+								</a>
+							</div>
+							<div class="caption">
+								<h4>work from home</h4>
+								<p>Cordebard</p>
+								<div class="matrlf-mid">
+									<ul class="rating">
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="fa fa-star gray-star" aria-hidden="true"></span>
+											</a>
+										</li>
+									</ul>
+									<ul class="price-list">
+										<li>$ 140.00</li>
+										<li>
+											$200.00
+										</li>
+									</ul>
+
+									<div class="clearfix"> </div>
+								</div>
+								<a href="#">
+									<button type="submit" class="chr-cart pchr-cart">Add to cart
+										<i class="fa fa-cart-plus" aria-hidden="true"></i>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- //row3 -->
+					<div class="clearfix"></div>
+
+				</div>
+
+				<!-- //product-sec1 -->
+				<div class="clearfix"></div>
 			</div>
 		</div>
-		<!--// Shop -->
+		<div class="clearfix"></div>
+
 	</div>
+</div>
+<!--// Shop -->
+</div>
 <!-- //home -->
-	<!-- js -->
-	<!-- Common js -->
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/jquery-2.2.3.min.js"></script>
-	<!--// Common js -->
-	<!-- cart-js -->
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/minicart.js"></script>
-	<script>
-		chr.render();
-
-		chr.cart.on('new_checkout', function (evt) {
-			var items, len, i;
-
-			if (this.subtotal() > 0) {
-				items = this.items();
-
-				for (i = 0, len = items.length; i < len; i++) {}
+<!-- js -->
+<!-- Common js -->
+<script src="<?php echo $this->assets_url; ?>/Assets/js/jquery-2.2.3.min.js"></script>
+<!--// Common js -->
+<!-- price range (top products) -->
+<script src="<?php echo $this->assets_url; ?>/Assets/js/jquery-ui.js"></script>
+<script>
+	//<![CDATA[ 
+	$(window).load(function () {
+		$("#slider-range").slider({
+			range: true,
+			min: 0,
+			max: 5000,
+			values: [50, 3000],
+			slide: function (event, ui) {
+				$("#amount").val("₹" + ui.values[0] + " - ₹" + ui.values[1]);
 			}
 		});
-	</script>
-	<!-- //cart-js -->
-	<!-- price range (top products) -->
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/jquery-ui.js"></script>
-	<script>
-		//<![CDATA[ 
-		$(window).load(function () {
-			$("#slider-range").slider({
-				range: true,
-				min: 0,
-				max: 9000,
-				values: [50, 6000],
-				slide: function (event, ui) {
-					$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-				}
-			});
-			$("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+		$("#amount").val("₹" + $("#slider-range").slider("values", 0) + " - ₹" + $("#slider-range").slider("values", 1));
 
-		}); //]]>
-	</script>
-	<!-- //price range (top products) -->
-
-	<!-- dropdown nav -->
-	<script>
-		$(document).ready(function () {
-			$(".dropdown").hover(
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideDown("fast");
-					$(this).toggleClass('open');
-				},
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideUp("fast");
-					$(this).toggleClass('open');
-				}
-			);
-		});
-	</script>
-	<!-- //dropdown nav -->
-	<!--search jQuery-->
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/main.js"></script>
-	<!--search jQuery-->
-
-	<!-- Scrolling Nav JavaScript -->
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/scrolling-nav.js"></script>
-	<!-- //fixed-scroll-nav-js -->
-	<!--//scripts-->
-
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/bootstrap.js"></script>
-	<!-- start-smoth-scrolling -->
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/move-top.js"></script>
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/easing.js"></script>
-	<script>
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
-			});
-		});
-	</script>
-	<!-- start-smoth-scrolling -->
-	<!-- here stars scrolling icon -->
-	<script>
-		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-
-			$().UItoTop({
-				easingType: 'easeOutQuart'
-			});
-
-		});
-	</script>
-	<!-- //here ends scrolling icon -->
-	<!-- smoothscroll -->
-	<script src="<?php echo $this->assets_url; ?>/Assets/js/SmoothScroll.min.js"></script>
-	<!-- //smoothscroll -->
-
-</body>
-
-</html>
+	}); //]]>
+</script>
+<!-- //price range (top products) -->

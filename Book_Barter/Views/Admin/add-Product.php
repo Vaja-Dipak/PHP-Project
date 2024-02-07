@@ -7,66 +7,85 @@
       <div class="col-xxl">
         <div class="card mb-4">
           <div class="card-body">
+
             <form method="post" enctype="multipart/form-data" id="addprodform">
               <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-company">Title</label>
+                <label class="col-sm-2 col-form-label">Title</label>
                 <div class="col-sm-10">
                   <input type="text" required class="form-control" id="title" name="title" placeholder="Title" />
                 </div>
               </div>
+
               <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-email">Author</label>
+                <label class="col-sm-2 col-form-label">Author</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
                     <input type="text" required id="author" name="author" class="form-control" placeholder="Author" />
                   </div>
                 </div>
               </div>
+
               <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-phone">Rating</label>
+                <label class="col-sm-2 col-form-label">Rating</label>
                 <div class="col-sm-10">
                   <select class="form-select" name="rating" id="rating">
-                    <option selected>Rating</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option>
+                    <option selected value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                   </select>
                 </div>
               </div>
+
               <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-message">Description</label>
+                <label class="col-sm-2 col-form-label">Description</label>
                 <div class="col-sm-10">
-                  <textarea id="basic-default-message" name="description" required class="form-control" placeholder="Description"></textarea>
+                  <textarea id="basic-default-message" name="description" required class="form-control"
+                    placeholder="Description"></textarea>
                 </div>
               </div>
+
               <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-message">Specification</label>
-                <div class="col-sm-10">
-                  <textarea id="basic-default-message" required class="form-control" placeholder="Specification"
-                    aria-label="Hi, Do you have a moment to talk Joe?"
-                    aria-describedby="basic-icon-default-message2"></textarea>
+                <label class="col-sm-2 col-form-label">Specification</label>
+                <div class="col-sm-2">
+                  <input type="text" required id="language" name="language" class="form-control" placeholder="Language" />
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" required id="format" name="format" class="form-control" placeholder="Format" />
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" required id="publisher" name="publisher" class="form-control" placeholder="Publisher" />
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" required id="edition" name="edition" class="form-control" placeholder="Edition" />
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" required id="pages" name="pages" class="form-control" placeholder="Pages" />
                 </div>
               </div>
+
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-message">Price</label>
                 <div class="col-sm-10">
-                <input type="number" required id="price" name="price" class="form-control" placeholder="Price" />
+                  <input type="number" required id="price" name="price" class="form-control" placeholder="Price" />
                 </div>
               </div>
+
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-message">images</label>
                 <div class="col-sm-10">
-                <input class="form-control" type="file" id="productimage" name="productimage" />
+                  <input class="form-control" type="file" id="productimage" name="productimage" required />
                 </div>
               </div>
+
               <div class="row justify-content-end">
                 <div class="col-sm-10">
                   <input type="submit" class="btn btn-primary" value="Add Product" name="addprod" id="addprod">
                 </div>
               </div>
             </form>
+
           </div>
         </div>
       </div>

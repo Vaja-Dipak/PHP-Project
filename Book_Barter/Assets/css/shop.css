@@ -1025,8 +1025,8 @@ button.chr-cart i {
 }
 
 button.chr-cart:hover {
-	background: #34c663;
-	color: #000;
+	background: teal;
+	color: #fff;
 }
 
 button.chr-cart:hover i {
@@ -1431,6 +1431,17 @@ ul.single_specific li {
 
 .col-md-3.product-men {
 	background: #fff;
+}
+.filtering {
+	background: #ee4f4f;
+	color: #fff;
+	margin-top: 30px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	height: 37px;
+	width: 100%;
+	border: solid 0.5px black;
+	border-radius: 5px;
 }
 
 /*-- /Responsive --*/

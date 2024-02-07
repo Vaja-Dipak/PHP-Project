@@ -314,7 +314,7 @@
 									<input type="hidden" name="add" value="1">
 									<input type="hidden" name="chr_item" value="Book3">
 									<input type="hidden" name="amount" value="280.00">
-									<button type="submit" class="chr-cart pchr-cart">Add to cart
+									<button type="submit" class="chr-cart">Add to cart
 										<i class="fa fa-cart-plus" aria-hidden="true"></i>
 									</button>
 									<a href="#" data-toggle="modal" data-target="#myModal1"></a>
