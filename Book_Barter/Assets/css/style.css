@@ -2396,7 +2396,7 @@ button#btn-signup {
     }
     .banner-bg-inner {
         background-position: 0 -146px;
-        min-height: 422px;
+        min-height: 20px;
     }
     .banner-text p:before {
         left: 30.5%;
@@ -2587,7 +2587,7 @@ button#btn-signup {
     }
     .banner-bg-inner {
         background-position: 0 -80px;
-        min-height: 385px;
+        min-height: 20px;
     }
 }
 
@@ -2742,7 +2742,7 @@ button#btn-signup {
         margin: 10px;
     }
     .banner-bg-inner {
-        min-height: 382px;
+        min-height: 20px;
     }
     .list-inline>li {
         margin: 7px;
@@ -2769,7 +2769,7 @@ button#btn-signup {
         left: 28.77%;
     }
     .banner-bg-inner {
-        min-height: 338px;
+        min-height: 20px;
         background-position: 0 -34px;
     }
     h2.title-inner {
@@ -2905,7 +2905,7 @@ button#btn-signup {
 
 @media screen and (max-width: 568px) {
     .banner-bg-inner {
-        min-height: 320px;
+        min-height: 20px;
     }
     .banner-bg-agileits {
         min-height: 470px;
@@ -3006,7 +3006,7 @@ button#btn-signup {
         font-size: 2.5em;
     }
     .banner-bg-inner {
-        min-height: 292px;
+        min-height: 20px;
         background-position: 0 -6px;
     }
     .team-grids:hover .social-icon {
@@ -3101,7 +3101,7 @@ button#btn-signup {
         font-size: 2.1em;
     }
     .banner-bg-inner {
-        min-height: 280px;
+        min-height: 20px;
         background-position: 0 0px;
     }
 }
@@ -3206,10 +3206,10 @@ button#btn-signup {
         padding-left: 15px;
     }
     .banner-bg-inner {
-        min-height: 240px;
+        min-height: 20px;
     }
     .banner-bg-inner {
-        min-height: 215px;
+        min-height: 21px;
     }
     h2.title-inner {
         font-size: 1.72em;

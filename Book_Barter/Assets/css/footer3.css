@@ -5,7 +5,7 @@
 }
 
 .footerv3-top {
-    padding: 3em 0;
+    padding: 3em 0 2em 0;
     background: #1f2c33;
 }
 
@@ -146,7 +146,7 @@
 
 @media screen and (max-width: 480px) {
     .footerv3-top {
-        padding: 4em 0;
+        padding: 4em 0 3em 0;
     }
     .footv3-left li {
         width: 26%;
@@ -171,7 +171,7 @@
         margin-bottom: 1em;
     }
     .footerv3-top {
-        padding: 3em 0;
+        padding: 3em 0 2em 0;
     }
 }
 

@@ -59,6 +59,9 @@ class controller extends Model
                     include_once("Views/Admin/dashboard.php");
                     include_once("Views/Admin/footer.php");
                     break;
+                    case '/accountsettings':
+                        include_once("Views/Admin/account-settings.php");
+                        break;
                 case '/add-product':
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/add-product.php");
@@ -66,7 +69,7 @@ class controller extends Model
                     if (isset($_REQUEST['addprod'])) {
 
                         $file_extension = pathinfo($_FILES["productimage"]["name"], PATHINFO_EXTENSION);
-                        $imagename = $_REQUEST['title'] . "_" . $_REQUEST['title'] . "." . $file_extension;
+                        $imagename = $_REQUEST['title'] . "_by_" . $_REQUEST['author'] . "." . $file_extension;
                         // Product Image Upload with Name as (ProductName_Author)
 
                         $specification = $_REQUEST['language'] . ", " . $_REQUEST['format'] . ", " . $_REQUEST['publisher'] . ", " . $_REQUEST['edition'] . ", " . $_REQUEST['pages'];
@@ -83,8 +86,10 @@ class controller extends Model
 
                         $addprod = $this->insert("product", $data);
 
-                        // $target = "assets/uploads/Products/" . $imagename;
-                        // move_uploaded_file($_FILES["productimage"]["tmp_name"], $target);
+                        $target = "assets/uploads/Products/" . $imagename;
+                        move_uploaded_file($_FILES["productimage"]["tmp_name"], $target);
+
+                        if($addprod){echo '<script>alert("Product added Succesfully..")</script>';}
                     }
                     break;
                 case '/inputs':
@@ -121,9 +126,6 @@ class controller extends Model
                 case '/under-maintenance':
                     include_once("Views/Admin/under-maintenance.php");
                     break;
-                case '/pages-account-settings-account':
-                    include_once("Views/Admin/pages-account-settings-account.php");
-                    break;
                 case '/tables-basic':
                     include_once("Views/Admin/tables-basic.php");
                     break;
@@ -133,11 +135,14 @@ class controller extends Model
                 case '/toasts':
                     include_once("Views/Admin/ui-toasts.php");
                     break;
+                case '/carousel':
+                    include_once("Views/Admin/ui-offcanvas.php");
+                    break;
             }
         }
-        // else {
-        //     header("location:home");
-        // }
+        else {
+            header("location:home");
+        }
     }
 
 }

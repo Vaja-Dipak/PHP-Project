@@ -138,3 +138,5 @@
             </div>
         </nav>
         <!-- //navbar ends here -->
+    </div>
+</body>

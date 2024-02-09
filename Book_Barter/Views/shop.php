@@ -2,7 +2,7 @@
 <div class="banner-bg-inner"></div>
 <!-- //banner -->
 <!-- breadcrumbs -->
-<div class="crumbs text-center">
+<div class="crumbs text-left">
 	<div class="container">
 		<div class="row">
 			<ul class="btn-group btn-breadcrumb bc-list">
@@ -16,12 +16,15 @@
 				</li>
 			</ul>
 		</div>
+		<!-- <button class="btn" style="background:teal; color:white; margin:10px 0 0 -15px; width:100px" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filter</button> -->
 	</div>
 </div>
 <!--//breadcrumbs ends here-->
 <!-- Shop -->
+
 <div class="innerf-pages section">
 	<div class="container-cart">
+
 		<!-- product left -->
 		<div class="side-bar col-md-3">
 			<h3>Filter by</h3>
@@ -32,19 +35,23 @@
 						Categories</h3>
 					<ul>
 						<li>
-							<input type="checkbox" checked name="category[]" value="Biographies" id="Biographies" class="checked">
+							<input type="checkbox" checked name="category[]" value="Biographies" id="Biographies"
+								class="checked">
 							<span class="span">Biographies</span>
 						</li>
 						<li>
-							<input type="checkbox" checked name="category[]" value="Technologies" id="Technologies" class="checked">
+							<input type="checkbox" checked name="category[]" value="Technologies" id="Technologies"
+								class="checked">
 							<span class="span">Technologies</span>
 						</li>
 						<li>
-							<input type="checkbox" checked name="category[]" value="History" id="History" class="checked">
+							<input type="checkbox" checked name="category[]" value="History" id="History"
+								class="checked">
 							<span class="span">History</span>
 						</li>
 						<li>
-							<input type="checkbox" checked name="category[]" value="Business" id="Business" class="checked">
+							<input type="checkbox" checked name="category[]" value="Business" id="Business"
+								class="checked">
 							<span class="span">Business</span>
 						</li>
 					</ul>
@@ -68,7 +75,8 @@
 					<h3 class="shopf-sear-headits-sear-head">Language</h3>
 					<ul>
 						<li>
-							<input type="checkbox" checked name="language[]" value="English" id="English" class="checked">
+							<input type="checkbox" checked name="language[]" value="English" id="English"
+								class="checked">
 							<span class="span">English</span>
 						</li>
 						<li>
@@ -76,7 +84,8 @@
 							<span class="span">Hindi</span>
 						</li>
 						<li>
-							<input type="checkbox" checked name="language[]" value="Gujarati" id="Gujarati" class="checked">
+							<input type="checkbox" checked name="language[]" value="Gujarati" id="Gujarati"
+								class="checked">
 							<span class="span">Gujarati</span>
 						</li>
 					</ul>
@@ -87,15 +96,18 @@
 					<h3 class="shopf-sear-headits-sear-head">Format</h3>
 					<ul>
 						<li>
-							<input type="checkbox" checked name="format[]" value="Hardcover" id="Hardcover" class="checked">
+							<input type="checkbox" checked name="format[]" value="Hardcover" id="Hardcover"
+								class="checked">
 							<span class="span">Hardcover</span>
 						</li>
 						<li>
-							<input type="checkbox" checked name="format[]" value="PDFFormat" id="PDFFormat" class="checked">
+							<input type="checkbox" checked name="format[]" value="PDFFormat" id="PDFFormat"
+								class="checked">
 							<span class="span">PDF Format</span>
 						</li>
 						<li>
-							<input type="checkbox" checked name="format[]" value="AudioBook" id="AudioBook" class="checked">
+							<input type="checkbox" checked name="format[]" value="AudioBook" id="AudioBook"
+								class="checked">
 							<span class="span">Audio Book</span>
 						</li>
 					</ul>
@@ -177,6 +189,7 @@
 			</form>
 		</div>
 		<!-- //product left -->
+
 		<!-- product right -->
 		<div class="left-ads-display col-md-9">
 			<div class="wrapper_top_shop">

@@ -2,7 +2,7 @@
 <div class="banner-bg-inner"></div>
 <!-- //banner -->
 <!-- breadcrumbs -->
-<div class="crumbs text-center">
+<div class="crumbs text-left">
     <div class="container">
         <div class="row">
             <ul class="btn-group btn-breadcrumb bc-list">
