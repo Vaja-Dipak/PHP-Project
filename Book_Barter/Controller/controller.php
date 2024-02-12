@@ -70,7 +70,7 @@ class controller extends Model
 
                         $file_extension = pathinfo($_FILES["productimage"]["name"], PATHINFO_EXTENSION);
                         $imagename = $_REQUEST['title'] . "_by_" . $_REQUEST['author'] . "." . $file_extension;
-                        // Product Image Upload with Name as (ProductName_Author)
+                        // Product Image Upload with Name as (ProductName_Author)-------
 
                         $specification = $_REQUEST['language'] . ", " . $_REQUEST['format'] . ", " . $_REQUEST['publisher'] . ", " . $_REQUEST['edition'] . ", " . $_REQUEST['pages'];
 
