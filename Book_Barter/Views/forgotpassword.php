@@ -27,16 +27,13 @@
                                                 Forgot Password ?</h3>
                                             <h6 class="mb-5">Enter your email and we'll send you instructions to reset
                                                 your password</h6>
-                                            <form action="" method="post">
+                                            <form action="" method="post" id="mail" onsubmit="sentmail()">
                                                 <div class="form-group">
-                                                    <input type="email" name="logemail" class="form-style"
+                                                    <input type="email" name="u_email" class="form-style"
                                                         placeholder="Enter Your Email" id="email" required>
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
-                                                <input type="submit" class="btn mx-4 mt-4" name="sendotp" value="Send OTP"
-                                                    onclick="on()">
-                                                <a href="#" class="btn mt-3 mx-5 py-3" onclick="on()"
-                                                    style="height:30px; width:80px">Back</a>
+                                                <input type="submit" class="btn mx-4 mt-4" name="sendotp" value="Send OTP">
                                             </form>
                                         </div>
                                     </div>
@@ -75,11 +72,10 @@
         </div>
     </div>
     <!-- partial -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
-        function on() {
-            event.preventDefault();
-            document.getElementById('reg-log').checked = true;
-        }
+
         function off() {
             document.getElementById('reg-log').checked = false;
         }
@@ -90,6 +86,32 @@
                 document.getElementById('password').value = "";
                 document.getElementById('repassword').value = "";
             }
+        }
+
+        function sentmail() {
+            event.preventDefault()
+
+            var result = {}
+            $.each($(document.getElementById('mail')).serializeArray(), function () {
+                result[this.name] = this.value;
+            })
+            // console.log(result);
+            fetch('<?php echo $this->assets_url; ?>/sendmail', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify(result)
+            }).then((res) => res.json()).then((result) => {
+                console.log(result);
+                if (result == 1) {
+                    document.getElementById('reg-log').checked = true;
+                    alert("Forgot Password OTP Sent on your Email..");
+                } else {
+                    alert("Please try again later");
+                }
+            })
         }
     </script>
 </body>

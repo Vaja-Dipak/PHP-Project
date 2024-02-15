@@ -25,7 +25,7 @@
                                 <div class="card-front">
                                     <div class="center-wrap">
                                         <div class="section text-center">
-                                            <h4 class="mb-4 pb-3">Log In</h4>
+                                            <h4 class="mb-4 pb-2">Log In</h4>
                                             <form action="" id="loginform" method="post" onsubmit="login()">
                                                 <div class="form-group">
                                                     <input type="email" name="u_email" class="form-style"
@@ -40,7 +40,9 @@
                                                 <input type="submit" class="btn font-weight-bold mt-4" name="log"
                                                     value="Log In">
                                                 <p class="mb-0 mt-4 text-center"><a href="forgotpass"
-                                                        class="link">Forgot your password?</a></p>
+                                                        class="link h6"><u>Forgot your password?</u></a></p>
+                                                <p class="mb-0 mt-3 text-center"><a href=""
+                                                        class="link text h6" onclick="on()"><u>Click to Create Account ?</u></a></p>
                                             </form>
                                         </div>
                                     </div>
@@ -87,6 +89,11 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
+        function on() {
+            event.preventDefault()
+            document.getElementById('reg-log').checked = true;
+        }
+
         function registration() {
             event.preventDefault()
 

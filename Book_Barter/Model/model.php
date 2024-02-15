@@ -52,13 +52,20 @@ class Model
         return $Res;
     }
 
-    function select($tbl)
+    function select($tbl,$whr="")
     {
         $sql = "SELECT * FROM $tbl";
-        echo $sql;
+        if ($whr != "") {
+            $sql .= " WHERE ";
+            foreach ($whr as $key => $value) {
+                $sql .= "$key = '$value'";
+            }
+            $sql = rtrim($sql, "AND");
+        }
+        // echo $sql;
         $sqlexe = $this->db->query($sql);
         
-        if ($sqlexe > 0) {
+        if ($sqlexe->num_rows > 0) {
             while ($data = $sqlexe->fetch_object()) {
                 $fetchdata[] = $data;
             }
@@ -69,6 +76,59 @@ class Model
             $Res['code'] = 0;
             $Res['msg'] = "try again";
             $Res['data'] = 0;
+        }
+        return $Res;
+    }
+
+    function update($tbl, $data, $whr)
+    {
+        $sql = "UPDATE $tbl SET";
+        foreach ($data as $dkey => $dvalue) {
+            $sql .= " $dkey = '$dvalue',";
+        }
+        $sql = rtrim($sql, ",");
+        $sql .= " WHERE ";
+        foreach ($whr as $key => $value) {
+            $sql .= " $key = '$value' AND";
+        }
+        $sql = rtrim($sql, "AND");
+        // echo $sql;
+        // exit;
+        $sqlEx = $this->db->query($sql);
+        // echo "<pre>";
+        // print_r($sqlEx);
+        if ($sqlEx > 0) {
+            $Res['Code'] = 1;
+            $Res['Data'] = 1;
+            $Res['Msg'] = "Success";
+        } else {
+            $Res['Code'] = 0;
+            $Res['Data'] = 0;
+            $Res['Msg'] = "Try again";
+        }
+        return $Res;
+        
+    }
+    function delete($tbl, $whr = "")
+    {
+        $sql = "DELETE FROM $tbl";
+        if ($whr != "") {
+            $sql .= " WHERE ";
+            foreach ($whr as $key => $value) {
+                $sql .= "$key = '$value'";
+            }
+            $sql = rtrim($sql, "AND");
+            // echo $sql;
+        }
+        $sqlEx = $this->db->query($sql);
+        if ($sqlEx > 0) {
+            $Res['Code'] = 1;
+            $Res['Data'] = 1;   
+            $Res['Msg'] = "Success";
+        } else {
+            $Res['Code'] = 0;
+            $Res['Data'] = 0;
+            $Res['Msg'] = "Try again";
         }
         return $Res;
     }
