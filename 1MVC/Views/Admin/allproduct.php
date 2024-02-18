@@ -29,7 +29,7 @@
                         <div class="table-responsive">
                             <table class=" table text-nowrap mb-0 align-middle" style="border: solid 2px;">
                                 <thead class="text-dark">
-                                    <tr style="text-align:middel;vertical-align: middle;text-align: center;">
+                                    <tr style="text-align:middel;vertical-align: middle;text-align: center;background: #0000002b;">
                                         <th>
                                             <h6 class="fw-semibold mb-0">Product <br> Id</h6>
                                         </th>

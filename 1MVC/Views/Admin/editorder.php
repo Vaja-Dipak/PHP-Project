@@ -20,7 +20,7 @@
                                         <div class="col">
                                             <label for="userid" class="input__label"><b>User Id</b></label>
                                             <input type="text" placeholder="Enter User Id" class="form-control"
-                                                name="c_id" value="<?php echo $editorder['Data'][0]->c_id ?>" id="">
+                                                disabled name="c_id" value="<?php echo $editorder['Data'][0]->c_id ?>" id="">
                                         </div>
                                     </div>
                                     <div class="row mt-3">

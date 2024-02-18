@@ -1,0 +1,29 @@
+Changes Points:
+
+    -> site url ma logo set kar
+
+    -> main page
+        -> 2 product ma error aave che 
+
+    -> about page
+        -> about page ma producs che a remove kar
+        -> about page ma navigation panel old vali che. jema link nthi chalti a
+
+    -> all products na NAME update kari ne bdha na name different thay am kar
+
+    -> checkout page
+        -> jo checkout page ma product add kari na hoy to NO DATA FOUND aavavu joiye
+        -> product ni quentity +/- ma design change 
+        -> delete nu button image pela aave
+        -> discount p6i last ma price aave
+
+    ->buynow page
+        -> fully page change karvanu che
+        -> Cash on Delivery kare to just database ma entry 
+        -> online payment kare to online payment nu page aavavu joiye
+        -> order complete thay atle order detail save thay ane
+        -> user ne order no mail thay javo joiye
+
+
+    -> admin panel
+        -> fully admin panel layout ane design change

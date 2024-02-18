@@ -6,32 +6,23 @@
           <div class="row">
             <h5 class="col-10">Order</h5>
             <div class="table-responsive mt-5">
-              <table class=" table text-nowrap mb-0 align-middle" style="border: solid 2px;">
+              <table class=" table text-nowrap mb-0 text-center align-middle" style="border: solid 2px;">
                 <thead class="text-dark">
-                  <tr>
+                  <tr style="background: #0000002b;">
                     <th>
                       <h6 class="fw-semibold mb-0">Order Id</h6>
                     </th>
                     <th>
-                      <h6 class="fw-semibold mb-0">Customer Id</h6>
+                      <h6 class="fw-semibold mb-0">Customer Name</h6>
                     </th>
                     <th>
-                      <h6 class="fw-semibold mb-0">Product Id</h6>
-                    </th>
-                    <th>
-                      <h6 class="fw-semibold mb-0">Quantity</h6>
-                    </th>
-                    <th>
-                      <h6 class="fw-semibold mb-0">Price</h6>
-                    </th>
-                    <th>
-                      <h6 class="fw-semibold mb-0">Total price</h6>
+                      <h6 class="fw-semibold mb-0">Product Name</h6>
                     </th>
                     <th>
                       <h6 class="fw-semibold mb-0">Order Date</h6>
                     </th>
                     <th>
-                      <h6 class="fw-semibold mb-0">Delivery Date</h6>
+                      <h6 class="fw-semibold mb-0">Amount</h6>
                     </th>
                     <th>
                       <h6 class="fw-semibold mb-0">Action</h6>
@@ -39,14 +30,11 @@
                   </tr>
                 </thead>
                 <tbody>
-                <?php
-                  foreach($allorder['Data'] as $key => $value) {
-                    // echo "<pre>";
-                    // print_r($value->role_id);
-                    // echo "</pre>";
-                  ?>
-                  <tr>
-                  <td>
+                  <?php
+                  foreach ($allorder['Data'] as $key => $value) {
+                    ?>
+                    <tr>
+                      <td>
                         <h6 class="fw-semibold mb-1">
                           <?php echo $value->o_id; ?>
                         </h6>
@@ -57,65 +45,33 @@
                         </h6>
                       </td>
                       <td>
-                        <h6 class="fw-semibold mb-1">
+                        <h6 class="fw-semibold mb-1 text-wrap" style="width: 90%;">
                           <?php echo $value->p_name; ?>
                         </h6>
                       </td>
                       <td>
                         <h6 class="fw-semibold mb-1">
-                          <?php echo $value->quantity; ?>
-                        </h6>
-                      </td>
-                      <td>
-                        <h6 class="fw-semibold mb-1">
-                          <?php echo $value->price; ?>
-                        </h6>
-                      </td>
-                      <td>
-                        <h6 class="fw-semibold mb-1">
-                          <?php echo $value->totalprice; ?>
-                        </h6>
-                      </td>   
-                      <td>
-                        <h6 class="fw-semibold mb-1">
                           <?php echo $value->orderdate; ?>
                         </h6>
-                      </td> 
+                      </td>
                       <td>
                         <h6 class="fw-semibold mb-1">
-                          <?php echo $value->deliverydate; ?>
+                          <?php echo $value->totalamount; ?>
                         </h6>
-                      </td>   
-                                      
-                    <td>
-                      <div class="d-flex align-items-center gap-2">
-                        <a href="editorder?o_id=<?php echo $value->o_id; ?>">
-                          <span class="badge bg-primary rounded-3 fw-semibold">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
-                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
-                                <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
-                                <path d="M16 5l3 3" />
-                              </svg>
-                          </span></a>
-                        <a href="deleteorder?o_id=<?php echo $value->o_id; ?>">
-                          <span class="badge bg-danger rounded-3 fw-semibold">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24"
-                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M4 7l16 0" />
-                                <path d="M10 11l0 6" />
-                                <path d="M14 11l0 6" />
-                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                              </svg>
-                          </span></a>
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                      <td>
+                        <?php if ($value->status == "Pending") { ?>
+                          <div class="d-flex align-items-center gap-2">
+                            <a href="acceptorder?o_id=<?php echo $value->o_id; ?>" class="btn btn-primary">Accept</a>
+                            <a href="deleteorder?o_id=<?php echo $value->o_id; ?>" class="btn btn-danger">Reject</a>
+                          </div>
+                        <?php } else { ?>
+                          <h6 class="fw-semibold mb-1">
+                            <?php echo $value->status;
+                        } ?>
+                        </h6>
+                      </td>
+                    </tr>
                   <?php //$index++;
                   } ?>
                 </tbody>

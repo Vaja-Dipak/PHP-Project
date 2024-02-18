@@ -8,6 +8,11 @@
   <link rel="shortcut icon" type="image/png" href="<?php echo $this->base_url; ?>assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="<?php echo $this->base_url; ?>assets/css/styles.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.csshttps://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/js/jquery.dataTables.min.js">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.csshttps://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/js/jquery.dataTables.min.js">
 
 </head>
 

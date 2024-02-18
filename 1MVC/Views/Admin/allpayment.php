@@ -8,7 +8,10 @@
             <div class="table-responsive mt-5">
               <table class=" table text-nowrap mb-0 align-middle" style="border: solid 2px;">
                 <thead class="text-dark">
-                  <tr>
+                  <tr style="background: #0000002b;">
+                    <th>
+                      <h6 class="fw-semibold mb-0">No.</h6>
+                    </th>
                     <th>
                       <h6 class="fw-semibold mb-0">Payment Id</h6>
                     </th>
@@ -19,73 +22,62 @@
                       <h6 class="fw-semibold mb-0">Oredr Id</h6>
                     </th>
                     <th>
+                      <h6 class="fw-semibold mb-0">Amount</h6>
+                    </th>
+                    <th>
                       <h6 class="fw-semibold mb-0">Payment Date</h6>
-                    </th>
-                    <th>
-                      <h6 class="fw-semibold mb-0">Payment Time</h6>
-                    </th>
-                    <th>
-                      <h6 class="fw-semibold mb-0">Payment Amount</h6>
                     </th>
                     <th>
                       <h6 class="fw-semibold mb-0">Payment Type </h6>
                     </th>
-                    
+
 
                   </tr>
                 </thead>
                 <tbody>
-                  <?php //$index = 1;
-                  foreach ($allpayment['Data'] as $key => $value) {
-                    // echo "<pre>";
-                    // print_r($value->role_id);
-                    // print_r($allcategories['Data'][0]);
-                    // echo "</pre>";
-                  
-                    ?>
-                    <tr>
 
+                  <?php $index = 1;
+                  foreach ($allpayment['Data'] as $key => $value) {
+                    ?>
+
+                    <tr>
                       <td>
                         <h6 class="fw-semibold mb-1">
-                          <?php echo $value->pay_id; ?>
+                          <?php echo $index; ?>
                         </h6>
                       </td>
                       <td>
-                        <p class="mb-0 fw-normal">
+                        <h6 class="fw-semibold mb-1">
+                          <?php echo $value->payment_id; ?>
+                        </h6>
+                      </td>
+                      <td>
+                        <h6 class="mb-1 fw-semibold">
                           <?php echo $value->username; ?>
-                        </p>
+                        </h6>
                       </td>
                       <td>
-                        <p class="mb-0 fw-normal">
+                        <h6 class="mb-1 fw-semibold">
                           <?php echo $value->o_id; ?>
-                        </p>
+                        </h6>
                       </td>
                       <td>
-                        <p class="mb-0 fw-normal">
-                          <?php echo $value->pay_date; ?>
-                        </p>
-                      </td>
-                      <td>
-                        <p class="mb-0 fw-normal">
-                          <?php echo $value->pay_time; ?>
-                        </p>
-                      </td>
-                      <td>
-                        <p class="mb-0 fw-normal">
+                        <h6 class="mb-1 fw-semibold">
                           <?php echo $value->pay_amount; ?>
-                        </p>
+                        </h6>
                       </td>
                       <td>
-                        <p class="mb-0 fw-normal">
-                          <?php echo $value->pay_type; ?>
-                        </p>
+                        <h6 class="mb-1 fw-semibold">
+                          <?php echo $value->pay_date; ?>
+                        </h6>
                       </td>
-                      
-
-
+                      <td>
+                        <h6 class="mb-1 fw-semibold">
+                          <?php echo $value->pay_type; ?>
+                        </h6>
+                      </td>
                     </tr>
-
-                  <?php //$index++;
+                    <?php $index++;
                   } ?>
                 </tbody>
               </table>
