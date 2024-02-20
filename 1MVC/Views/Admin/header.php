@@ -14,6 +14,17 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.csshttps://cdn.datatables.net/2.0.0/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/js/jquery.dataTables.min.js">
 
+  <!-- invoice script -->
+    <!-- jQuery -->
+    <script src="<?php echo $this->base_url; ?>plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="<?php echo $this->base_url; ?>plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="<?php echo $this->base_url; ?>plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="<?php echo $this->base_url; ?>plugins/toastr/toastr.min.js"></script>
+    <script src="<?php echo $this->base_url; ?>plugins/script.js"></script>
+
 </head>
 
 <body>

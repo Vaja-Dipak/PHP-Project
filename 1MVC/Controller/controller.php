@@ -709,7 +709,7 @@ class controller extends Model
                     include_once("Views/Admin/footer.php");
                     break;
                 case '/invoice':
-                    $allinvoice = $this->selectjoin("invoice", array('users' => 'invoice.c_id = users.c_id', 'pro' => 'invoice.p_id = pro.p_id'));
+                    $allinvoice = $this->selectjoin("invoice", array('users' => 'invoice.c_id = users.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allinvoice.php");
                     include_once("Views/Admin/footer.php");
@@ -832,10 +832,10 @@ class controller extends Model
                     }
                     break;
                 case '/generatereport':
-                    $allgeneratereport = $this->select("orderdata");
-                    // include_once("Views/Admin/header.php");
+                    $allgeneratereport = $this->selectjoin("invoice",array('users' => 'invoice.c_id = users.c_id'));
+                    include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allgeneratereport.php");
-                    // include_once("Views/Admin/footer.php");
+                    include_once("Views/Admin/footer.php");
                     break;
                 case '/checkout':
                     if (isset($_SESSION['UserData'])) {

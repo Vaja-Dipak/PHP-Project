@@ -7,7 +7,7 @@
         <div class="card-body p-4">
           <h5 class="card-title fw-semibold mb-4">All Users</h5>
           <div class="table-responsive">
-            <table class=" table text-nowrap mb-0 align-middle" style="border: solid 2px;">
+            <table class=" table text-nowrap mb-0 align-middle" style="border: solid 1px;">
               <thead class="text-dark fs-4">
                 <tr style="background: #0000002b;">
                   <th class="border-bottom-0">

@@ -6,7 +6,7 @@
           <div class="row">
             <h5 class="col-10">Feedback</h5>
             <div class="table-responsive mt-5">
-              <table class=" table text-nowrap mb-0 align-middle" style="border: solid 2px;">
+              <table class=" table text-nowrap mb-0 align-middle" style="border: solid 1px;">
                 <thead class="text-dark">
                   <tr style="background: #0000002b;">
                     <th>

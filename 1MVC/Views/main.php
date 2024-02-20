@@ -287,7 +287,7 @@
 							<div class="text-center"><br>
 							<a href="addcart?productid=<?php echo $data['Data'][68]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
-								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
+								<a href="addcart?productid=<?php echo $data['Data'][68]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
 							</div>
@@ -302,18 +302,18 @@
 					<div class="card">
 						<div class="card-header p-0">
 							<a href="single.html">
-								<img class="card-img-bottom" src="<?php echo $this->base_url . "images/" . $data['Data'][69]->p_image ?>"
+								<img class="card-img-bottom" src="<?php echo $this->base_url . "images/" . $data['Data'][67]->p_image ?>"
 									alt="Card image cap">
 							</a>
 						</div>
 						<div class="card-body">
-						<?php echo $data['Data'][69]->p_des ?><br>
+						<?php echo $data['Data'][67]->p_des ?><br>
 							MRP:₹
-							<?php echo $data['Data'][69]->p_price ?>
+							<?php echo $data['Data'][67]->p_price ?>
 							<div class="text-center"><br>
-							<a href="addcart?productid=<?php echo $data['Data'][69]->p_id; ?>"><button type="button" class="btn"
+							<a href="addcart?productid=<?php echo $data['Data'][67]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
-								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
+								<a href="addcart?productid=<?php echo $data['Data'][67]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
 							</div>
@@ -334,13 +334,13 @@
 							</a>
 						</div>
 						<div class="card-body">
-						<?php echo $data['Data'][69]->p_des ?><br>
+						<?php echo $data['Data'][67]->p_des ?><br>
 							MRP:₹
-							<?php echo $data['Data'][69]->p_price ?>
+							<?php echo $data['Data'][67]->p_price ?>
 							<div class="text-center"><br>
-							<a href="addcart?productid=<?php echo $data['Data'][69]->p_id; ?>"><button type="button" class="btn"
+							<a href="addcart?productid=<?php echo $data['Data'][67]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
-								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
+								<a href="addcart?productid=<?php echo $data['Data'][67]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
 							</div>
@@ -368,7 +368,7 @@
 							<div class="text-center"><br>
 							<a href="addcart?productid=<?php echo $data['Data'][65]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
-								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
+								<a href="addcart?productid=<?php echo $data['Data'][65]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
 							</div>
@@ -393,7 +393,7 @@
 							<div class="text-center"><br>
 							<a href="addcart?productid=<?php echo $data['Data'][24]->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
-								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
+								<a href="addcart?productid=<?php echo $data['Data'][24]->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
 							</div>
@@ -417,7 +417,7 @@
 							<div class="text-center"><br>
 							<a href="addcart?productid=<?php echo $data['Data'][5]	->p_id; ?>"><button type="button" class="btn"
                                             style="width:48%">Add To Cart</button></a>
-								<a href="buynow"> <button type="button" class="btn" name="btn-buynow"
+								<a href="addcart?productid=<?php echo $data['Data'][5]	->p_id; ?>"> <button type="button" class="btn" name="btn-buynow"
 										style="background: #e83e8c; color:white;width:48%">Buy
 										Now</button></a>
 							</div>

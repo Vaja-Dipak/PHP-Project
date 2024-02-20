@@ -13,29 +13,28 @@
 </head>
 
 <body>
-    <?php
-print_r($_SESSION['UserData']->c_id);
-    ?>
     <section class="pt-5 pb-5">
         <div class="container">
             <div class="row w-100">
                 <div class="col-lg-12 col-md-12 col-12">
-                    <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
-                    <table id="shoppingCart" class="table table-condensed table-responsive">
+                    <h3 class="display-5 mb-4 text-center">Shopping Cart</h3>
+                    <table id="shoppingCart" class="table text-center table-responsive"
+                        style="border: solid 1px;">
                         <thead>
                             <tr>
-                                <th style="width:60%">Product</th>
-                                <th style="width:12%">Price</th>
-                                <th style="width:60%">Discount</th>
-                                <th style="width:10%">Quantity</th>
-                                <th style="width:16%"></th>
+                                <th style="width:40%">Product</th>
+                                <th style="width:20%">Price</th>
+                                <th style="width:20%">Discount</th>
+                                <th style="width:20%">Quantity</th>
+                                <th style="width:20%"></th>
                             </tr>
                         </thead>
 
                         <?php
                         $totalprice = 0;
                         $discount = 0;
-                        if (isset($checkout['Data'])) {
+                        $finalamount = 0;
+                        if ($checkout['Code'] == 1) {
                             foreach ($checkout['Data'] as $key => $value) {
                                 $totalprice += ($value->p_price * $value->p_quantity);
                                 $discount += ($value->p_price * $value->p_discount / 100) * $value->p_quantity;
@@ -44,7 +43,7 @@ print_r($_SESSION['UserData']->c_id);
                                 ?>
 
                                 <tbody>
-                                    <tr style="border:1px solid;">
+                                    <tr>
                                         <td data-th="Product">
                                             <div class="row">
                                                 <div class="col-md-3 text-left">
@@ -60,7 +59,6 @@ print_r($_SESSION['UserData']->c_id);
                                         </td>
                                         <td data-th="Price">&#8377;
                                             <?php echo $value->p_price ?>
-                                        </td>
                                         </td>
                                         <td data-th="Discount">
                                             <?php echo $value->p_discount . " %" ?>
@@ -88,7 +86,7 @@ print_r($_SESSION['UserData']->c_id);
                         } else { ?>
                             <tbody>
                                 <tr>
-                                    <td class="text-center">No Product Added</td>
+                                    <td colspan="4" class="fw-semibold text-center m-2">No Product Added</td>
                                 </tr>
                             </tbody>
                         <?php } ?>

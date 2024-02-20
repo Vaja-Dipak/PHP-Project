@@ -6,7 +6,7 @@
           <div class="row">
             <h5 class="col-10">Payment</h5>
             <div class="table-responsive mt-5">
-              <table class=" table text-nowrap mb-0 align-middle" style="border: solid 2px;">
+              <table class=" table text-nowrap mb-0 align-middle" style="border: solid 1px;">
                 <thead class="text-dark">
                   <tr style="background: #0000002b;">
                     <th>
@@ -58,7 +58,7 @@
                       </td>
                       <td>
                         <h6 class="mb-1 fw-semibold">
-                          <?php echo $value->o_id; ?>
+                          <?php echo $value->product; ?>
                         </h6>
                       </td>
                       <td>

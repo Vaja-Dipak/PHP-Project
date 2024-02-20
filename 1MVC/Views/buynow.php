@@ -16,7 +16,7 @@
 <body>
     <section class="pt-5 mt-2">
         <div class="container mt-5">
-            <div class="card rounded-1">
+            <div class="card rounded-1 pb-4 mb-4">
                 <div class="card-body"></div>
                 <h3 class="text-center"><b>Checkout</b></h3>
                 <hr class="border-dark">
@@ -74,7 +74,7 @@
         $('body').on('click', '.buy_now', function (e) {
             var totalAmount = $(this).attr("data-amount");
             var product_id = $(this).attr("data-id");
-            var user_id="<?php $_SESSION['UserData']->c_id; ?>"
+            var user_id = "<?php $_SESSION['UserData']->c_id; ?>"
             var options = {
                 "key": "rzp_test_r9kbb3W4NAARxR",
                 "amount": (totalAmount * 100), // 2000 paise = INR 20
@@ -87,10 +87,10 @@
                         type: 'post',
                         dataType: 'json',
                         data: {
-                            user_id:user_id ,razorpay_payment_id: response.razorpay_payment_id, totalAmount: totalAmount, product_id: product_id,
+                            user_id: user_id, razorpay_payment_id: response.razorpay_payment_id, totalAmount: totalAmount, product_id: product_id,
                         },
                         success: function (msg) {
-
+    
                             <?php
                             foreach ($checkout['Data'] as $data) {
                                 $products[] = $data->p_name;
@@ -101,14 +101,17 @@
 
                             $connection = new mysqli("localhost", "root", "", "masterdatabase");
                             $sql = "INSERT INTO `orderdata`(`p_name`, `c_id`, `totalamount`) VALUES ('$products','$c_id','$total')";
-                            // print_r($sql);
                             $response = $connection->query($sql);
 
-                            $sql1 = "DELETE FROM `cart` WHERE c_id=$c_id";
+                            $sql1 = "INSERT INTO `invoice`(`p_name`, `c_id`, `p_method`, `Amount`) VALUES ('$products','$c_id','Online','$total')";
                             $res = $connection->query($sql1);
 
-                            echo "<script>alert('Your Order Submited Successfully.');
-                            window.location='home';</script>";
+                            $sql2 = "INSERT INTO `payment`(`c_id`, `o_id`, `pay_amount`) VALUES ('$c_id','$products','$total')";
+                            $res = $connection->query($sql2);
+
+                            $sql3 = "DELETE FROM `cart` WHERE c_id=$c_id";
+                            $res = $connection->query($sql3);
+
                             ?>
 
                             window.location.href = 'http://localhost/1MVC/Views/success.php';
