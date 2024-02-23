@@ -20,10 +20,6 @@ class controller extends Model
         $this->mail = new PHPMailer(true);
         ob_start();
         parent::__construct();
-        // echo "inside constructor";
-        // include_once("../Views/header.php");
-        // include_once("../Views/footer.php");
-        // include_once("../Views/main.php");
         // echo "<pre>";
         // print_r($_SERVER);
         // echo "<pre>";
@@ -375,40 +371,6 @@ class controller extends Model
                     include_once("Views/Admin/addsubcategory.php");
                     include_once("Views/Admin/footer.php");
                     if (isset($_REQUEST['btn-subcategory'])) {
-                        // $allowed_image_extension = array("png", "PNG", "jpg", "JPG", "jpeg", "JPEG", "webp");
-                        // $file_extension = pathinfo($_FILES["profile_pic"]["name"], PATHINFO_EXTENSION);
-                        // if (!file_exists($_FILES['profile_pic']['tmp_name'])) {
-                        //     $response = array(
-                        //         "type" => "error",
-                        //         "message" => "Choose image file to upload."
-                        //     );
-                        // } else if (!in_array($file_extension, $allowed_image_extension)) {
-                        //     $response = array(
-                        //         "type" => "error",
-                        //         "message" => "Upload valid images. Only allowed JPG, JPEG, PNG and webp Images."
-                        //     );
-                        // } else if (($_FILES["profile_pic"]["size"] > 2000000)) {
-                        //     $response = array(
-                        //         "type" => "error",
-                        //         "message" => "Image size allowed smaller then 2MB"
-                        //     );
-                        // } else {
-                        //     $profilename = $_POST['subcategory'] . "_profile." . $file_extension;
-                        //     $target = "Public/Assets/images/" . $profilename;
-                        //     if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $target)) {
-                        //         $response = array(
-                        //             "type" => "success",
-                        //             "message" => "Image uploaded successfully..",
-                        //             "name" => $profilename
-                        //         );
-                        //         $imagename = $profilename;
-                        //     } else {
-                        //         $response = array(
-                        //             "type" => "error",
-                        //             "message" => "Problem in image uploading..!"
-                        //         );
-                        //     }
-                        // }
                         $InsertData = array(
                             "cat_id" => $_REQUEST['category'],
                             "sc_name" => $_REQUEST['subcategory'],
@@ -867,25 +829,9 @@ class controller extends Model
                     $CartFlag = false;
                     $Cartid = 0;
                     foreach ($CartData['Data'] as $key => $value) {
-                        // $value->p_id;
-                        // echo "inside foreach";
                         if ($value->p_id == $_REQUEST['productid']) {
                             // // echo "inside if";
                             $CartFlag = true;
-                            // $Cartid = $value->cart_id;
-                            // $p_quantity = $value->p_quantity;
-                            // // var_dump($p_quantity);
-                            // $Quantity = $p_quantity + 1;
-                            // // var_dump($Quantity);
-                            // // echo "Quantity = ".$Quantity;
-                            // $dt = array(
-                            //     'p_id' => $Data['Data'][0]->p_id,
-                            //     'c_id' => $_SESSION['UserData']->c_id,
-                            //     'p_quantity' => $Quantity,
-                            //     'p_price' => $Data['Data'][0]->p_price,
-                            //     'p_amount' => $Data['Data'][0]->p_price * $Quantity,
-                            // );
-                            // $added = $this->update('cart', $dt, array('c_id' => $_SESSION['UserData']->c_id, "cart_id" => $Cartid));
                         }
                     }
                     // echo "</pre>";
@@ -895,7 +841,6 @@ class controller extends Model
                         echo '<script>alert("product already added into cart..")</script>';
                         echo '<script>window.location ="checkout";</script>';
                     } else {
-                        # code...
                         $dt = array(
                             'p_id' => $Data['Data'][0]->p_id,
                             'c_id' => $_SESSION['UserData']->c_id,
@@ -956,7 +901,6 @@ class controller extends Model
         }
     }
 }
-
 
 $controllerobj = new controller;
 ?>
