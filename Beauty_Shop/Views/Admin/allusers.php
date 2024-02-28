@@ -110,7 +110,7 @@
                             </span>
                           </a>
                         <?php } else { ?>
-                          <a href="edituser?c_id=<?php echo $value->c_id; ?>">
+                          <a href="edituser?<?php echo "c_id=$value->c_id"; ?>">
                             <span class="badge bg-primary rounded-3 fw-semibold">
                               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
                                 height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"

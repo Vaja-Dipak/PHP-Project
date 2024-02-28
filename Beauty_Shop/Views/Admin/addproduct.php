@@ -23,22 +23,22 @@
                         <div class="row mt-3">
                             <div class="col">
                                 <label for="subcategoryid" class="input__label"><b>Sub Category Id</b></label>
-                                <input type="text" placeholder="Subcategory Id" class="form-control"
-                                    name="subcategoryid" id="">
+                                <select name="subcategory" class="form-control" id="subcategory">
+                                </select>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                            <label for="productname" class="input__label"><b>Product Name</b></label>
-                                <input type="text" placeholder="Product Name" required class="form-control" name="productname"
-                                    id="">
+                                <label for="productname" class="input__label"><b>Product Name</b></label>
+                                <input type="text" placeholder="Product Name" required class="form-control"
+                                    name="productname" id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                            <label for="productprice" class="input__label"><b>Product Price</b></label>
-                                <input type="text" placeholder="Product Price" required class="form-control" name="productprice"
-                                    id="">
+                                <label for="productprice" class="input__label"><b>Product Price</b></label>
+                                <input type="text" placeholder="Product Price" required class="form-control"
+                                    name="productprice" id="">
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -48,14 +48,14 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                            <label for="productdescription" class="input__label"><b>Product Description</b></label>
+                                <label for="productdescription" class="input__label"><b>Product Description</b></label>
                                 <input type="text" placeholder="Product Description" required class="form-control"
                                     name="productdescription" id="">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col">
-                            <label for="productdiscount" class="input__label"><b>Product Discount</b></label>
+                                <label for="productdiscount" class="input__label"><b>Product Discount</b></label>
                                 <input type="text" placeholder="Product Discount" required class="form-control"
                                     name="productdiscount" id="">
                             </div>
@@ -72,6 +72,24 @@
             </div>
         </div>
     </div>
+    <script>
+        $().ready(function () {
+            fetchcategory()
+        })
+        function fetchcategory() {
+            fetch("<?php echo $this->siteurl; ?>/getallsubcategory").then((res) => res.json()).then((kaipan) => {
+                console.log(kaipan);
+                let optioncategory = '<option hidden>Sub Category</option>'
+                kaipan.forEach(element => {
+                    // console.log(element.country_name);
+                    optioncategory += `<option value="${element.sc_name}">${element.sc_name}</option>`
+                });
+                // console.log(optioncountry);
+                $("#subcategory").html(optioncategory);
+            })
+        }
+    </script>
+
 </body>
 
 </html>

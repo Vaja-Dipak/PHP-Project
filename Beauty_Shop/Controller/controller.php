@@ -14,18 +14,45 @@ use Dompdf\Dompdf;
 class controller extends Model
 {
     public $mail = "";
-    public $base_url = "http://localhost/1MVC/Public/Assets/";
+    public $base_url = "http://localhost/Beauty_Shop/Public/Assets/";
+    public $siteurl = "http://localhost/Beauty_Shop";
+
     function __construct()
     {
         $this->mail = new PHPMailer(true);
+
         ob_start();
         parent::__construct();
-        // echo "<pre>";
-        // print_r($_SERVER);
-        // echo "<pre>";
         if (isset($_SERVER['PATH_INFO'])) {
             switch ($_SERVER['PATH_INFO']) {
+
+
+                //============== Restful API Section =================
+
+                case '/getcity':
+                    $data = $this->select('cities');
+                    echo json_encode($data['Data']);
+                    break;
+
+                case '/getcategory':
+                    $data = $this->select('category');
+                    echo json_encode($data['Data']);
+                    break;
+
+                case '/getsubcategory':
+                    $data = $this->select('subcategory', array("cat_id" => $_REQUEST["cat_id"]));
+                    echo json_encode($data['Data']);
+                    break;
+
+                case '/getallsubcategory':
+                    $data = $this->select('subcategory');
+                    echo json_encode($data['Data']);
+                    break;
+                    
+
+
                 //============== User panel=================
+
                 case '/':
                 case '/home':
                     $data = $this->select("pro");
@@ -36,39 +63,40 @@ class controller extends Model
                     include_once("Views/main.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/about':
                     include_once("Views/header.php");
                     include_once("Views/about.php");
                     include_once("Views/footer.php");
                     break;
-                case '/abo':
-                    include_once("Views/header.php");
-                    include_once("Views/abo.php");
-                    include_once("Views/footer.php");
-                    break;
+
                 case '/contact':
                     include_once("Views/header.php");
                     include_once("Views/contact.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/usergallery':
                     $galleryimages = $this->select("gallery");
                     include_once("Views/header.php");
                     include_once("Views/gallery.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/login':
                     include_once("Views/header.php");
                     include_once("Views/login.php");
                     include_once("Views/footer.php");
                     if (isset($_REQUEST['btn-login'])) {
                         $LoginREs = $this->login($_POST['username'], $_POST['password']);
+
                         if ($LoginREs['Code'] == 1) {
                             // echo "inside if true auth";
                             // echo "<pre>";
                             // print_r($LoginREs['Data']->role_id);
                             // exit;
                             $_SESSION['UserData'] = $LoginREs['Data'];
+
                             if ($LoginREs['Data']->role_id == 1) {
                                 header("location:allusers");
                             } else {
@@ -79,10 +107,12 @@ class controller extends Model
                         }
                     }
                     break;
+
                 case '/logout':
                     session_destroy();
                     header("location:home");
                     break;
+
                 case '/registration':
                     include_once("Views/header.php");
                     include_once("Views/registration.php");
@@ -103,10 +133,7 @@ class controller extends Model
                         }
                     }
                     break;
-                case '/getcity':
-                    $data = $this->select('cities');
-                    echo json_encode($data['Data']);
-                    break;
+
                 case '/sendemail':
                     include_once("Views/header.php");
                     include_once("Views/sendemail.php");
@@ -118,9 +145,10 @@ class controller extends Model
                             $OTP = random_int(100000, 999999);
                             $this->update('users', array("otp" => $OTP), array("email" => $emailId));
                             $msg = "Your Forgot password OTP is : $OTP  &ensp; OR &ensp; ";
-                            $msg .= "<a href='http://localhost/1MVC/forgetpassword?email=$emailId'>Click here to change your Password</a>";
+                            $msg .= "<a href='$this->siteurl/forgetpassword?email=$emailId'>Click here to change your Password</a>";
+
                             // echo "<pre>";
-                            // print_r($OTP);
+                            // print_r($msg);
                             // echo "</pre>";
                             $this->sendemail($emailId, $msg);
                             header("location:forgetpassword?email=$emailId");
@@ -129,6 +157,7 @@ class controller extends Model
                         }
                     }
                     break;
+
                 case '/forgetpassword':
                     include_once("Views/header.php");
                     include_once("Views/forgetpassword.php");
@@ -139,21 +168,15 @@ class controller extends Model
                     // print_r($mainotp['data'][0]->otp);
                     // echo "</pre>";
                     if (isset($_REQUEST['confirmpassword'])) {
-                        // print_r($mainotp);
                         if ($mainotp['Data'][0]->otp == $_REQUEST['otp']) {
                             $this->update('users', array("password" => $_REQUEST['password']), array("email" => $email));
-
                             header("location:login");
                         } else {
                             echo '<script>alert("Please Enter valid OTP..!")</script>';
                         }
                     }
                     break;
-                case '/verify':
-                    include_once("Views/header.php");
-                    include_once("Views/forgetpassword.php");
-                    include_once("Views/footer.php");
-                    break;
+
                 case '/compact':
                     $compactdata = $this->select("pro", array("p_name" => "Compact Powder"));
                     // print_r($compactdata);
@@ -161,60 +184,70 @@ class controller extends Model
                     include_once("Views/compact.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/foundation':
                     $foundationdata = $this->select("pro", array("p_name" => "Foundation"));
                     include_once("Views/header.php");
                     include_once("Views/foundation.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/lipstick':
                     $lipstickdata = $this->select("pro", array("p_name" => "Lipstick"));
                     include_once("Views/header.php");
                     include_once("Views/lipstick.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/eyelinear':
                     $eyelineardata = $this->select("pro", array("p_name" => "Eyelinear"));
                     include_once("Views/header.php");
                     include_once("Views/eyelinear.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/eyeshadow':
                     $eyeshadowdata = $this->select("pro", array("p_name" => "Eyeshadow"));
                     include_once("Views/header.php");
                     include_once("Views/eyeshadow.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/facewash':
                     $facewashdata = $this->select("pro", array("p_name" => "Face Wash"));
                     include_once("Views/header.php");
                     include_once("Views/facewash.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/moisturizer':
                     $moisturizerdata = $this->select("pro", array("p_name" => "Moisturizer"));
                     include_once("Views/header.php");
                     include_once("Views/moisturizer.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/sunscreen':
                     $sunscreendata = $this->select("pro", array("p_name" => "Sunscreen"));
                     include_once("Views/header.php");
                     include_once("Views/sunscreen.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/sheetmask':
                     $sheetmaskdata = $this->select("pro", array("p_name" => "Sheetmask"));
                     include_once("Views/header.php");
                     include_once("Views/sheetmask.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/hairoil':
                     $hairoildata = $this->select("pro", array("p_name" => "Hair Oil"));
                     include_once("Views/header.php");
                     include_once("Views/hairoil.php");
                     include_once("Views/footer.php");
                     break;
+
                 case '/shampoo&conditioner':
                     $shampooConditionerdata = $this->select("pro", array("p_name" => "Shampoo & Conditioner"));
                     include_once("Views/header.php");
@@ -222,25 +255,41 @@ class controller extends Model
                     include_once("Views/footer.php");
                     break;
 
+
                 case '/buynow':
-                    if (isset($_SESSION['UserData'])) {
+                    $this->logincheck();
+                    if (isset($_REQUEST['total'])) {
+                        $cid = $_SESSION['UserData']->c_id;
+                        $total=$_REQUEST['total'];
+                        
                         $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'), array('cart.status' => 0));
+                        
+                        foreach ($checkout['Data'] as $data) { $Data[] = $data->p_name; }
+                        $products = implode(",", $Data);
+                        
+                        $this->update("cart",array("status"=>1),array("c_id"=>$cid));
+                        $this->insert("orderdata",array("p_name"=>$products,"c_id"=>$cid,"totalamount"=>$total));
+                        $this->insert("invoice",array("p_name"=>$products,"c_id"=>$cid,"Amount"=>$total));
+                        $this->insert("payment",array("product"=>$products,"c_id"=>$cid,"pay_amount"=>$total));
+
                         include_once("Views/header.php");
                         include_once("Views/buynow.php");
-                        // include_once("Views/footer.php");
                     } else {
-                        header("location:login");
+                        header("location:checkout");
                     }
                     break;
 
                 // ===========================Admin panel=========================
 
+
                 case '/allusers':
+                    $this->logincheck();
                     $allUsers = $this->select("users");
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allusers.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/edituser':
                     $UserById = $this->select("users", array("c_id" => $_REQUEST['c_id']));
                     include_once("Views/Admin/header.php");
@@ -257,6 +306,7 @@ class controller extends Model
                         }
                     }
                     break;
+
                 case '/deleteuser':
                     $UsersDeleteResponse = $this->delete("users", array("c_id" => $_GET['c_id']));
                     echo "<pre>";
@@ -267,13 +317,17 @@ class controller extends Model
                         echo "Error while deleting data try again after sometime";
                     }
                     break;
+
                 case '/category':
+                    $this->logincheck();
                     $allcategories = $this->select("category");
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allcategory.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/addcategory':
+                    $this->logincheck();
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/addcategory.php");
                     include_once("Views/Admin/footer.php");
@@ -313,23 +367,18 @@ class controller extends Model
                             }
                         }
                         $InsertData = array(
-                            // "cat_id" => $_REQUEST['cat_id'],
                             "cat_name" => $_REQUEST['category'],
                             "cat_des" => $_REQUEST['categorydescription'],
                             "cat_image" => $imagename
                         );
 
                         $res = $this->insert("category", $InsertData);
-                        // print_r($res['Code']);
                         if ($res['Code'] == 1) {
                             header("location:category");
                         }
                     }
                     break;
-                case '/getcategory':
-                    $data = $this->select('category');
-                    echo json_encode($data['Data']);
-                    break;
+
                 case '/editcategory':
                     $editcategory = $this->select("category", array("cat_id" => $_REQUEST['cat_id']));
                     include_once("Views/Admin/header.php");
@@ -347,25 +396,20 @@ class controller extends Model
                         }
                     }
                     break;
+
                 case '/deletecategory':
                     $CategoryDeleteResponse = $this->delete("category", array("cat_id" => $_GET['cat_id']));
-                    echo "<pre>";
-                    print_r($CategoryDeleteResponse);
-                    try {
-                        if ($CategoryDeleteResponse['Code'] == 1) {
-                            header("location:category");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:category");
                     break;
+
                 case '/subcategory':
-                    // $allsubcategories = $this->select("subcategory");
+                    $this->logincheck();
                     $allsubcategories = $this->selectjoin('subcategory', array('category' => 'subcategory.cat_id = category.cat_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allsubcategory.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/addsubcategory':
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/addsubcategory.php");
@@ -383,14 +427,7 @@ class controller extends Model
                         }
                     }
                     break;
-                case '/getsubcategory':
-                    $data = $this->select('subcategory', array("cat_id" => $_REQUEST["cat_id"]));
-                    echo json_encode($data['Data']);
-                    break;
-                case '/getallsubcategory':
-                    $data = $this->select('subcategory');
-                    echo json_encode($data['Data']);
-                    break;
+
                 case '/editsubcategory':
                     $editsubcategory = $this->select("subcategory", array("sc_id" => $_REQUEST['sc_id']));
                     include_once("Views/Admin/header.php");
@@ -409,20 +446,14 @@ class controller extends Model
                         }
                     }
                     break;
+
                 case '/deletesubcategory':
                     $SubcategoryDeleteResponse = $this->delete("subcategory", array("sc_id" => $_GET['sc_id']));
-                    echo "<pre>";
-                    print_r($SubcategoryDeleteResponse);
-                    try {
-                        if ($SubcategoryDeleteResponse['Code'] == 1) {
-                            header("location:subcategory");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:subcategory");
                     break;
+
                 case '/product':
-                    // $allproduct = $this->select("pro");
+                    $this->logincheck();
                     $allproduct = $this->selectjoin('pro', array('subcategory' => 'subcategory.sc_id = pro.sc_id'));
                     if (isset($_REQUEST['srch'])) {
                         $product = $_REQUEST['searchtxt'];
@@ -432,6 +463,7 @@ class controller extends Model
                     include_once("Views/Admin/allproduct.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/addproduct':
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/addproduct.php");
@@ -476,6 +508,7 @@ class controller extends Model
                         }
                     }
                     break;
+
                 case '/editproduct':
                     $editproduct = $this->select("pro", array("p_id" => $_REQUEST['p_id']));
                     include_once("Views/Admin/header.php");
@@ -493,24 +526,20 @@ class controller extends Model
                         }
                     }
                     break;
+
                 case '/deleteproduct':
                     $ProductDeleteResponse = $this->delete("pro", array("p_id" => $_GET['p_id']));
-                    echo "<pre>";
-                    print_r($ProductDeleteResponse);
-                    try {
-                        if ($ProductDeleteResponse['Code'] == 1) {
-                            header("location:product");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:product");
                     break;
+
                 case '/gallery':
+                    $this->logincheck();
                     $galleryimages = $this->select("gallery");
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allgallery.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/addgallery':
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/addgallery.php");
@@ -551,61 +580,45 @@ class controller extends Model
                             }
                         }
                         $InsertData = array(
-                            // "cat_id" => $_REQUEST['cat_id'],
                             "g_path" => $imagename
                         );
 
                         $res = $this->insert("gallery", $InsertData);
-                        // print_r($res['Code']);
                         if ($res['Code'] == 1) {
                             header("location:gallery");
                         }
                     }
                     break;
+
                 case '/deletegallery':
                     $GalleryDeleteResponse = $this->delete("gallery", array("g_id" => $_GET['g_id']));
-                    echo "<pre>";
-                    print_r($GalleryDeleteResponse);
-                    try {
-                        if ($GalleryDeleteResponse['Code'] == 1) {
-                            header("location:gallery");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:gallery");
                     break;
+
                 case '/allorder':
+                    $this->logincheck();
                     $allorder = $this->selectjoin("orderdata", array('users' => 'orderdata.c_id = users.c_id'));
-                    // print_r($allorder);
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allorder.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/acceptorder':
-                    $UpdateRes = $this->update("orderdata", array("status"=>"In Proccess"), array("o_id" => $_GET['o_id']));
+                    $UpdateRes = $this->update("orderdata", array("status" => "In Proccess"), array("o_id" => $_GET['o_id']));
                     if ($UpdateRes['Code'] == 1) {
                         header("location:allorder");
                     } else {
-                        echo "please try again";
+                        echo '<script>alert("Please Try again later...")</script>';
                     }
                     break;
+
                 case '/deleteorder':
                     $OrderDeleteResponse = $this->delete("orderdata", array("o_id" => $_GET['o_id']));
-                    // echo "<pre>";
-                    // print_r($OrderDeleteResponse);
-                    try {
-                        if ($OrderDeleteResponse['Code'] == 1) {
-                            header("location:allorder");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:allorder");
                     break;
-                case '/getoffers':
-                    $data = $this->select('offers');
-                    echo json_encode($data['Data']);
-                    break;
+
                 case '/offers':
+                    $this->logincheck();
                     // $alloffer = $this->select("offers");
                     $alloffer = $this->selectjoin("offers", array('pro' => 'pro.p_id = offers.p_id'));
                     // echo "<pre>";
@@ -614,13 +627,14 @@ class controller extends Model
                     include_once("Views/Admin/alloffer.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/addoffer':
+                    $this->logincheck();
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/addoffer.php");
                     include_once("Views/Admin/footer.php");
                     if (isset($_REQUEST['btn-offer'])) {
                         $InsertData = array(
-                            // "of_id" => $_REQUEST['offerid'],
                             "p_id" => $_REQUEST['productid'],
                             "of_startdate" => $_REQUEST['offerstartdate'],
                             "of_enddate" => $_REQUEST['offerenddate'],
@@ -630,10 +644,11 @@ class controller extends Model
                         if ($res['Code'] == 1) {
                             header("location:offers");
                         } else {
-                            echo "eeeeeeeeeee";
+                            echo '<script>alert("Please Try again later...")</script>';
                         }
                     }
                     break;
+
                 case '/editoffers':
                     $editoffers = $this->select("offers", array("of_id" => $_REQUEST['of_id']));
                     include_once("Views/Admin/header.php");
@@ -648,34 +663,32 @@ class controller extends Model
                         if ($UpdateRes['Code'] == 1) {
                             header("location:offers");
                         } else {
-                            echo "please try again";
+                            echo '<script>alert("Please Try again later...")</script>';
                         }
                     }
                     break;
+
                 case '/deleteoffers':
                     $OfferDeleteResponse = $this->delete("offers", array("of_id" => $_GET['of_id']));
-                    echo "<pre>";
-                    print_r($OfferDeleteResponse);
-                    try {
-                        if ($OfferDeleteResponse['Code'] == 1) {
-                            header("location:offers");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:offers");
                     break;
+
                 case '/payment':
+                    $this->logincheck();
                     $allpayment = $this->selectjoin('payment', array('users' => 'users.c_id = payment.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allpayment.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/invoice':
+                    $this->logincheck();
                     $allinvoice = $this->selectjoin("invoice", array('users' => 'invoice.c_id = users.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allinvoice.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/editinvoice':
                     $editinvoicedata = $this->select("invoice", array("i_id" => $_REQUEST['i_id']));
                     include_once("Views/Admin/header.php");
@@ -690,79 +703,67 @@ class controller extends Model
                         if ($UpdateRes['Code'] == 1) {
                             header("location:invoice");
                         } else {
-                            echo "please try again";
+                            echo '<script>alert("Please Try again later...")</script>';
                         }
                     }
                     break;
+
                 case '/downloadinvoice':
+                    $this->logincheck();
                     $data = $this->select("invoice");
                     include_once("Views/Admin/invoice.php");
                     include_once("Views/Admin/downloadpdf.php");
-                    // include_once("Views/downloadpdf.php");
                     break;
-                case '/downloadinvoicedata':
-                    $data = $this->select("invoice");
-                    $dompdf = new Dompdf();
-                    // $htmlData = "<h1>"['Data'][0]->i_date."</h1>";
-                    $htmlData = file_get_contents("Views/Admin/invoice.php");
-                    $dompdf->loadHtml($htmlData);
-                    // (Optional) Setup the paper size and orientation
-                    $dompdf->setPaper('A4', 'landscape');
-                    // Render the HTML as PDF
-                    $dompdf->render();
-                    // Output the generated PDF to Browser
-                    $dompdf->stream();
-                    break;
+
                 case '/deleteinvoice':
+                    $this->logincheck();
                     $invoiceDeleteResponse = $this->delete("invoice", array("i_id" => $_GET['i_id']));
-                    echo "<pre>";
-                    print_r($invoiceDeleteResponse);
-                    try {
-                        if ($invoiceDeleteResponse['Code'] == 1) {
-                            header("location:invoice");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:invoice");
                     break;
+
                 case '/feedback':
-                    // $allfeedback = $this->select("feedback");
+                    $this->logincheck();
                     $allfeedback = $this->selectjoin('feedback', array('users' => 'feedback.c_id = users.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allfeedback.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/changefeedback':
+                    $this->logincheck();
                     $UpdateRes = $this->update("feedback", array("f_status" => $_REQUEST['change']), array("f_id" => $_REQUEST['f_id']));
                     header("location:feedback");
                     break;
+
                 case '/deliveryboy':
+                    $this->logincheck();
                     $alldelivery = $this->select("deliveryboy");
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/alldelivery.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/adddelivery':
+                    $this->logincheck();
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/adddelivery.php");
                     include_once("Views/Admin/footer.php");
                     if (isset($_REQUEST['btn-delivery'])) {
                         $InsertData = array(
-                            // "d_id" => $_REQUEST['offerid'],
                             "d_name" => $_REQUEST['deliveryboyname'],
                             "d_pass" => $_REQUEST['password'],
                             "d_contactno" => $_REQUEST['deliveryboycontactno'],
                             "d_email" => $_REQUEST['deliveryboyemail'],
                         );
                         $res = $this->insert("deliveryboy", $InsertData);
-                        // print_r($res['Code']);
                         if ($res['Code'] == 1) {
                             header("location:deliveryboy");
                         } else {
-                            echo "eeeeeeeeeee";
+                            echo '<script>alert("Please Try again later...")</script>';
                         }
                     }
                     break;
+
                 case '/editdelivery':
                     $editdelivery = $this->select("deliveryboy", array("d_id" => $_REQUEST['d_id']));
                     include_once("Views/Admin/header.php");
@@ -777,50 +778,38 @@ class controller extends Model
                         if ($UpdateRes['Code'] == 1) {
                             header("location:deliveryboy");
                         } else {
-                            echo "please try again";
+                            echo '<script>alert("Please Try again later...")</script>';
                         }
                     }
                     break;
+
                 case '/deletedelivery':
                     $DeliveryDeleteResponse = $this->delete("deliveryboy", array("d_id" => $_GET['d_id']));
-                    echo "<pre>";
-                    print_r($DeliveryDeleteResponse);
-                    try {
-                        if ($DeliveryDeleteResponse['Code'] == 1) {
-                            header("location:deliveryboy");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:deliveryboy");
                     break;
+
                 case '/generatereport':
-                    $allgeneratereport = $this->selectjoin("invoice",array('users' => 'invoice.c_id = users.c_id'));
+                    $this->logincheck();
+                    $allgeneratereport = $this->selectjoin("invoice", array('users' => 'invoice.c_id = users.c_id'));
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allgeneratereport.php");
                     include_once("Views/Admin/footer.php");
                     break;
+
                 case '/checkout':
-                    if (isset($_SESSION['UserData'])) {
-                        $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'), array('cart.status' => 0));
-                        include_once("Views/checkout.php");
-                    } else {
-                        header("location:login");
-                    }
+                    $this->logincheck();
+                    $c_id=$_SESSION['UserData']->c_id;
+                    $checkout = $this->selectjoin('cart', array('pro' => 'cart.p_id = pro.p_id'), array('cart.status' => 0,"c_id"=>$c_id));
+                    include_once("Views/checkout.php");
                     break;
+
                 case '/deletecheckout':
                     $CheckoutDeleteResponse = $this->delete("cart", array("cart_id" => $_GET['cart_id']));
-                    echo "<pre>";
-                    print_r($CheckoutDeleteResponse);
-                    try {
-                        if ($CheckoutDeleteResponse['Code'] == 1) {
-                            header("location:checkout");
-                        }
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
+                    header("location:checkout");
                     break;
+
                 case '/addcart':
-                    // print_r($_REQUEST);
+                    $this->logincheck();
                     $Data = $this->select('pro', array('p_id' => $_REQUEST['productid']));
                     $CartData = $this->select('cart', array('c_id' => $_SESSION['UserData']->c_id));
                     // echo "<pre>";
@@ -830,11 +819,9 @@ class controller extends Model
                     $Cartid = 0;
                     foreach ($CartData['Data'] as $key => $value) {
                         if ($value->p_id == $_REQUEST['productid']) {
-                            // // echo "inside if";
                             $CartFlag = true;
                         }
                     }
-                    // echo "</pre>";
                     // echo "outside loop";
                     // exit;
                     if ($CartFlag) {
@@ -863,6 +850,14 @@ class controller extends Model
         ob_flush();
     }
 
+    function logincheck()
+    {
+        if (!isset($_SESSION['UserData'])) {
+            echo '<script>alert("Please Login.")</script>';
+            echo '<script>window.location ="login";</script>';
+        }
+    }
+
     function sendemail($email, $msg)
     {
         try {
@@ -871,16 +866,16 @@ class controller extends Model
             $this->mail->isSMTP();                                            //Send using SMTP
             $this->mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $this->mail->SMTPAuth = true;                                   //Enable SMTP authentication
-            $this->mail->Username = 'khushburathod5354@gmail.com';                     //SMTP username
-            $this->mail->Password = 'dvcgklnwuebqqdfy';                               //SMTP password
+            $this->mail->Username = 'vajadipak2110@gmail.com';                     //SMTP username
+            $this->mail->Password = 'bpyhwgooiwileqos';                               //SMTP password
             $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $this->mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $this->mail->setFrom('khushburathod5354@gmail.com', 'Khushbu Rathod');
+            $this->mail->setFrom('vajadipak2110@gmail.com', 'Dipak Vaja');
             $this->mail->addAddress($email, '');     //Add a recipient
             // $this->mail->addAddress('ellen@example.com');               //Name is optional
-            $this->mail->addReplyTo('khushirathod0096@gmail.com', 'Information');
+            $this->mail->addReplyTo('vajadipak2110@gmail.com', 'Information');
             // $this->mail->addCC('cc@example.com');
             // $this->mail->addBCC('bcc@example.com');
 

@@ -96,11 +96,11 @@
                             <?php echo $totalprice ?>
                         </h5>
                         <h5>Discount : ₹
-                            <?php echo $discount ?>
+                            <?php echo (int)$discount ?>
                         </h5>
                         <hr>
                         <h5>Sub Total : ₹
-                            <?php echo $finalamount ?>
+                            <?php $finalamount=(int)$finalamount; echo $finalamount ?>
                         </h5>
                         <!-- <h1>$99.00</h1> -->
                     </div>

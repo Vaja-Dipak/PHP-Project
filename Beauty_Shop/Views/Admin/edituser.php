@@ -84,7 +84,7 @@
 <script>
     fetchcity();
     function fetchcity() {
-        fetch(`http://localhost/1MVC/getcity`).then((res) => res.json()).then((kaipan) => {
+        fetch(`http://localhost/Beauty_Shop/getcity`).then((res) => res.json()).then((kaipan) => {
             console.log(kaipan);
             let optioncity = '<option hidden>city</option>';
             kaipan.forEach(element => {

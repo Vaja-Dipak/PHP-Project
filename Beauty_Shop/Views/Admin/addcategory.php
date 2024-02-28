@@ -17,15 +17,7 @@
                 <div class="card-header text-center"><b>Add Category</b></div>
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
-                        <div class="row mt-3">
-                            <div class="row mt-3">
-                                <!-- <div class="col">
-                                    <input type="text" placeholder="Category Id" class="form-control" name="category id"
-                                        id="">
-                                </div> -->
-                            </div>
-
-                            
+                        <div class="row mt-3">                        
                             <select name="category" class="form-control" id="category">
                                 <option value="">--Select Category--</option>
                                 <option value="makeup">Makeup</option>

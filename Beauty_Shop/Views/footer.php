@@ -23,32 +23,6 @@
 				</a>
 			</li>
 		</ul>
-		<!-- <div class="footerv2-w3ls pt-4">
-				<h3 class="w3f_title">Socialize with Us</h3>
-				<ul class="social-iconsv2 agileinfo pt-3">
-					<li>
-						<a href="#">
-							<i class="fab fa-facebook-f"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fab fa-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fab fa-google-plus-g"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fab fa-linkedin-in"></i>
-						</a>
-					</li>
-				</ul>
-			</div> -->
-
 	</div>
 	<div class="p-sm-5 px-3 py-5">
 		<!-- footer right -->
@@ -78,14 +52,6 @@
 		</div>
 		<!-- //footer row -->
 	</div>
-	<!-- copyright -->
-	<!-- <div class="cpy-right text-center py-3 bg-theme">
-			<p class="text-white">© 2018 Beauty Blog. All rights reserved | Design by
-				<a href="http://w3layouts.com" class="text-white"> W3layouts.</a>
-			</p>
-		</div> -->
-	<!-- //copyright -->
-	<!-- //footer container -->
 </div>
 <!-- //footer -->
 <!-- js-->

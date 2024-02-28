@@ -56,7 +56,6 @@
                     <div class="row mt-3">
                         <div class="col text-center">
                             <select name="city" class="form-control" id="city">
-                                <option value="">--Select City--</option>
                             </select>
                         </div>
                     </div>
@@ -95,7 +94,7 @@
         }
     }
     function fetchcity(id) {
-        fetch(`http://localhost/1MVC/getcity`).then((res) => res.json()).then((kaipan) => {
+        fetch(`<?php echo $this->siteurl; ?>/getcity`).then((res) => res.json()).then((kaipan) => {
             console.log(kaipan);
             let optioncity = '<option hidden>city</option>';
             kaipan.forEach(element => {

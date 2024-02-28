@@ -20,9 +20,10 @@
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
                         <div class="row mt-3">
+                        <label for="category" class="input__label"><b>Category</b></label>
                             <select name="category" class="form-control" id="category">
-                                <option value="">Select Category</option>
-                        </div><br>
+                            </select>
+                        </div>
                         <div class="row mt-3"><br>
                             <label for="subcategory" class="input__label"><b>Sub Category Name</b></label>
                             <input type="text" name="subcategory" class="form-control" id="subcategory"
@@ -53,7 +54,7 @@
                 fetchcategory()
             })
             function fetchcategory() {
-                fetch("http://localhost/1MVC/getcategory").then((res) => res.json()).then((kaipan) => {
+                fetch("<?php echo $this->siteurl; ?>/getcategory").then((res) => res.json()).then((kaipan) => {
                     console.log(kaipan);
                     let optioncategory = '<option hidden>Category</option>'
                     kaipan.forEach(element => {
@@ -64,16 +65,6 @@
                     $("#category").html(optioncategory);
                 })
             }
-            // function fetchsubcategory(id) {
-            //     fetch(`http://localhost/1MVC/getsubcategory?cat_id=${id}`).then((res) => res.json()).then((kaipan) => {
-            //         console.log(kaipan);
-            //         let optionsubcategory = '<option hidden>Sub category</option>'
-            //         kaipan.forEach(element => {
-            //             optionsubcategory += `<option value="${element.sc_name}">${element.sc_name}</option>`
-            //         });
-            //         $("#subcategory").html(optionsubcategory);
-            //     })
-            // }
         </script>
     </div>
 </body>

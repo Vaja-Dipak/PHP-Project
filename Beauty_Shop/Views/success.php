@@ -1,8 +1,3 @@
-<?php
-$cid=$_SESSION['UserData']->c_id;
-$con = mysqli_connect("localhost","root", "", "masterdatabase");
-$sql = "UPDATE `cart` SET `status`=0 WHERE c_id=$cid";
-?>
 <!DOCTYPE html>
 <html>
 

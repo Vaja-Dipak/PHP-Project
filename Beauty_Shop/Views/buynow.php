@@ -76,14 +76,14 @@
             var product_id = $(this).attr("data-id");
             var user_id = "<?php $_SESSION['UserData']->c_id; ?>"
             var options = {
-                "key": "rzp_test_r9kbb3W4NAARxR",
+                "key": "rzp_test_WX3WKd336XYaxn",
                 "amount": (totalAmount * 100), // 2000 paise = INR 20
                 "name": "<?php echo $_SESSION['UserData']->username ?>",
                 "description": "Payment",
                 "image": "https://www.tutsmake.com/wp-content/uploads/2018/12/cropped-favicon-1024-1-180x180.png",
                 "handler": function (response) {
                     $.ajax({
-                        url: 'http://localhost/1MVC/Views/payment-proccess.php',
+                        url: 'http://localhost/Beauty_Shop/Views/payment-proccess.php',
                         type: 'post',
                         dataType: 'json',
                         data: {
@@ -91,30 +91,10 @@
                         },
                         success: function (msg) {
     
-                            <?php
-                            foreach ($checkout['Data'] as $data) {
-                                $products[] = $data->p_name;
-                            }
-                            $products = implode(" | ", $products);
-                            $c_id = $_SESSION['UserData']->c_id;
-                            $total = $_REQUEST['total'];
-
-                            $connection = new mysqli("localhost", "root", "", "masterdatabase");
-                            $sql = "INSERT INTO `orderdata`(`p_name`, `c_id`, `totalamount`) VALUES ('$products','$c_id','$total')";
-                            $response = $connection->query($sql);
-
-                            $sql1 = "INSERT INTO `invoice`(`p_name`, `c_id`, `p_method`, `Amount`) VALUES ('$products','$c_id','Online','$total')";
-                            $res = $connection->query($sql1);
-
-                            $sql2 = "INSERT INTO `payment`(`c_id`, `o_id`, `pay_amount`) VALUES ('$c_id','$products','$total')";
-                            $res = $connection->query($sql2);
-
-                            $sql3 = "DELETE FROM `cart` WHERE c_id=$c_id";
-                            $res = $connection->query($sql3);
-
-                            ?>
-
-                            window.location.href = 'http://localhost/1MVC/Views/success.php';
+                            var url;
+                            url +='http://localhost/Beauty_Shop/Views/success.php?totalamount=';
+                            url +=totalAmount;
+                            window.location.href = url;
                         }
                     });
 

@@ -3,7 +3,7 @@
             <div class="card border-primary mb-3">
                 <div class="card-header text-center"><h6>Login</h6></div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" autocomplete="off">
                         <div class="row">
                             <div class="col">
                                 <input type="text" placeholder="Enter User Name" required class="form-control" name="username" id="">

@@ -52,17 +52,6 @@
                                     src="<?php echo $this->base_url . "images/" . $value->g_path; ?>" alt="Card image cap">
 
                             </div>
-                            <!-- <div class="card-body">
-
-                                
-
-                                <div class="text-center"><br><br>
-                                    <a href="addcart?productid=<?php echo $value->g_id; ?>"><button type="button" class="btn"
-                                            style="width:48%">Add To Cart</button></a>
-                                    <button type="button" class="btn" style="background: #e83e8c; color:white;width:48%">Buy
-                                        Now</button>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <!-- //blog grid -->

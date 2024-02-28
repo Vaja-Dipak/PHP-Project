@@ -85,9 +85,9 @@ class Model
             $SQL .= " LEFT JOIN $key on $value";
         }
         if ($condition != "") {
-            $SQL .= " WHERE ";
+            $SQL .= " WHERE";
             foreach ($condition as $key => $value) {
-                $SQL .= "$key = $value";
+                $SQL .= " $key = $value AND";
             }
             $SQL = rtrim($SQL, "AND");
         }

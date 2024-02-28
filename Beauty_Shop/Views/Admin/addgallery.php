@@ -20,11 +20,6 @@
             <div class="card-header text-center"><b>Add Images</b></div>
             <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
-                    <!-- <div class="row mt-3">
-                        <div class="col">
-                        <input type="text" placeholder="Category Name" class="form-control" name="categoryname" id="">
-                        </div>
-                    </div> -->
                     <div class="row mt-3">
                         <input type="file" name="gallery" required class="form-control">
                     </div>
