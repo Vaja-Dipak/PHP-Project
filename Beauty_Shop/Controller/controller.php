@@ -279,6 +279,8 @@ class controller extends Model
                     }
                     break;
 
+
+
                 // ===========================Admin panel=========================
 
 
@@ -862,7 +864,6 @@ class controller extends Model
     {
         try {
             //Server settings
-            // $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
             $this->mail->isSMTP();                                            //Send using SMTP
             $this->mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $this->mail->SMTPAuth = true;                                   //Enable SMTP authentication
