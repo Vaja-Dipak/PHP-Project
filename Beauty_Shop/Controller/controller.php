@@ -860,7 +860,7 @@ class controller extends Model
         }
     }
 
-    function sendemail($email, $msg)
+    function sendemail($email, $msg)            //Mail send function
     {
         try {
             //Server settings
